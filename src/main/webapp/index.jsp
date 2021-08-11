@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <title>注册登录页面</title>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -65,7 +64,7 @@
 </div>
 
 <!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src="js/jquery-3.6.0.js"/>
 <script src="js/index.js"></script>
 </body>
 </html>
