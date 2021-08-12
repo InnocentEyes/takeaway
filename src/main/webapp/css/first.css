@@ -1,0 +1,252 @@
+/*未完成*/
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#container{
+	width: 100%;
+	height: 100%;
+	
+}
+#top{
+	width: 100%;
+	height: 0.3125rem;
+	background-color: black;
+}
+#header{
+	width: 100%;
+	height: 1.75rem;
+	background-color: white;
+	position: relative;
+}
+#header .header_left_box{
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	color: black;
+	font-size: 110%;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+#header .header_right_box_one{
+	position: absolute;
+	left: 70%;
+	color: black;
+	top: 10%;
+	font-size: 110%;
+	padding-right: 1.875rem;
+	border-right: 1px solid black;
+}
+#header .header_right_box_two{
+	position: absolute;
+	left: 80%;
+	color: black;
+	top: 10%;
+	padding-right: 1.875rem;
+	border-right: 1px solid black;
+	font-size: 110%;
+	
+}
+#header .header_left_box_three{
+	position: absolute;
+	left: 88%;
+	color: black;
+	top: 10%;
+	padding-right: 1.875rem;
+	font-size: 110%;
+}
+#search{
+	width: 100%;
+	height: 10.5rem;
+	margin-top: 1.875rem;
+}
+#search .left{
+	width: 100%;
+	background-color: white;
+	height: 12.5rem;
+	text-align: center;
+	float: left;
+}
+#search .left img{
+	margin-top: 2rem;
+	width: 8rem;
+	height: 8rem;
+}
+
+#nav{
+	width: 100%;
+	height: 6.25rem;
+}
+
+#nav .navMenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#nav .navMenu a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#nav .navMenu a:hover {
+  color: #fddb3a;
+}
+
+#nav .navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#nav .navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#nav .navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#nav .navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#nav .navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(285px);
+  transform: translateX(285px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+#banner{
+	width: 100%;
+	height: 25rem;
+	margin-top: 0.025rem;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+  &.animation-reveal {
+    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.card {
+  margin: 0 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 35, 0.25);
+  border-radius: 8px;
+  height: 150px;
+  width: 150px;
+  display: block;
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+  transition: width 0.16s ease-in-out, height 0.16s ease-in-out;
+}
+
+.card.is-custom-selected {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-bg {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#service{
+	width: 100%;
+	height: 50rem;
+}
+
+#service .box{
+	width: 32%;
+	height: 28%;
+	float: left;
+	border-radius: 0.625rem;
+	border: 1px solid black;
+	margin-left: 0.625rem;
+	margin-right: 0.3125rem;
+	margin-top:1.875rem;
+}
+
+#footer{
+	width: 100%;
+	height: 15.625rem;
+	background-color: #000000;
+}
