@@ -155,27 +155,27 @@ a{
 	margin-top: 0.025rem;
 }
 
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-  &.animation-reveal {
-    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-  @keyframes reveal {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
+/*.carousel {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    opacity: 0;*/
+/*  .animation-reveal {*/
+/*    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);*/
+/*  }*/
+/*  @keyframes reveal {*/
+/*    0% {*/
+/*      opacity: 0;*/
+/*    }*/
+/*    100% {*/
+/*      opacity: 1;*/
+/*    }*/
+/*  }*/
+/*}*/
 
 .card {
   margin: 0 1rem;
