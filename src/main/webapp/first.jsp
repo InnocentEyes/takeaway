@@ -21,7 +21,7 @@
     <div id="top"></div>
     <div id="header">
         <div class="header_left_box">
-            <a href="index.html">登录/注册</a>
+            <a href="javascript:void(0)">登录/注册</a>
         </div>
         <div class="header_right_box_one">
             <a href="javascript:void(0)">我的账户</a>
@@ -34,8 +34,8 @@
         </div>
     </div>
     <div id="search">
-        <div class="left">
-            <img src="../css/img/9XpPN9Je3m.png" />
+        <div class="left animate__bounceIn">
+            <img src="css/img/9XpPN9Je3m.png"/>
         </div>
     </div>
     <div id="nav">
@@ -47,62 +47,133 @@
             <div class="dot"></div>
         </nav>
     </div>
-</div>
-<div id="banner">
-    <div class="carousel">
-        <div class="slider">
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://coverfiles.alphacoders.com/737/73733.jpg);">
+    <div id="banner">
+        <div id="banner_header">
+            限时打折
+        </div>
+        <div class="carousel">
+            <div class="slider">
+
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://coverfiles.alphacoders.com/737/73733.jpg);">
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://media.playstation.com/is/image/SCEA/star-wars-jedi-fallen-order-square-art-01-ps4-us-29may19?$native_nt$);">
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://media.playstation.com/is/image/SCEA/star-wars-jedi-fallen-order-square-art-01-ps4-us-29may19?$native_nt$);">
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://lumiere-a.akamaihd.net/v1/images/lego-star-wars-skywalker-saga-main_c0051eca.jpeg?region=0%2C0%2C1000%2C999&width=960);">
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://lumiere-a.akamaihd.net/v1/images/lego-star-wars-skywalker-saga-main_c0051eca.jpeg?region=0%2C0%2C1000%2C999&width=960);">
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://droidjournal.com/wp-content/uploads/2020/04/ghost-of-tsushima.jpg);">
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://droidjournal.com/wp-content/uploads/2020/04/ghost-of-tsushima.jpg);">
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://www.rockstargames.com/V/img/global/order/mobile-cover.jpg);">
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://www.rockstargames.com/V/img/global/order/mobile-cover.jpg);">
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://i.pinimg.com/originals/14/21/72/14217228af3726b095b9805b991e1c16.jpg);">
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://i.pinimg.com/originals/14/21/72/14217228af3726b095b9805b991e1c16.jpg);">
+                    </div>
                 </div>
+                <div class="card">
+                    <div class="card-bg" style="background-image: url(https://media.playstation.com/is/image/SCEA/star-wars-jedi-fallen-order-square-art-01-ps4-us-29may19?$native_nt$);">
+                    </div>
+                </div>
+
             </div>
-            <div class="card">
-                <div class="card-bg" style="background-image: url(https://media.playstation.com/is/image/SCEA/star-wars-jedi-fallen-order-square-art-01-ps4-us-29may19?$native_nt$);">
+        </div>
+    </div>
+    <div id="service">
+        <div class="box">
+            <div class="box_top">
+                每月精选游戏
+            </div>
+            <div class="box_main">
+                <div class="box_right">
+                    <div class="img_1">
+                        <img src="https://droidjournal.com/wp-content/uploads/2020/04/ghost-of-tsushima.jpg" >
+                        <p>对马岛之魂</p>
+                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
+                    </div>
+                    <div class="img_2">
+                        <img src="https://i.pinimg.com/originals/14/21/72/14217228af3726b095b9805b991e1c16.jpg" >
+                        <p>蜘蛛侠</p>
+                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
+                    </div>
+                </div>
+                <div class="box_left">
+                    <div class="img_1 "><img src="../css/img/game_two.png" ><p>鬼泣</p>
+                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
+                    </div>
+                    <div class="img_3"><img src="../css/img/game_one.png" ><p>GTA5</p>
+                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
+                    </div>
+                    <div class="img_2 "><img src="../css/img/game_three.png" ><p>我的世界</p>
+                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
+                    </div>
                 </div>
             </div>
 
         </div>
+        <div id="footer">
+            <ul>
+                <li><ol>
+                    <li><a href="javascript:void(0)">关于我们</a></li>
+                    <li><a href="javascript:void(0)">关于游戏</a></li>
+                    <li><a href="javascript:void(0)">新闻中心</a></li>
+                    <li><a href="javascript:void(0)">人才招聘</a></li>
+                </ol></li>
+                <li><ol>
+                    <li><a href="javascript:void(0)">推荐游戏</a></li>
+                    <li><a href="javascript:void(0)">对马岛之魂</a></li>
+                    <li><a href="javascript:void(0)">蜘蛛侠</a></li>
+                    <li><a href="javascript:void(0)">金色沙滩</a></li>
+                </ol></li>
+                <li><ol>
+                    <li><a href="javascript:void(0)">购物相关</a></li>
+                    <li><a href="javascript:void(0)">周边产品</a></li>
+                    <li><a href="javascript:void(0)">线下体验店</a></li>
+                    <li><a href="javascript:void(0)">客户服务政策</a></li>
+                </ol></li>
+                <li><ol>
+                    <li><a href="javascript:void(0)">会员中心</a></li>
+                    <li><a href="javascript:void(0)">会员注册</a></li>
+                    <li><a href="javascript:void(0)">会员登录</a></li>
+                </ol></li>
+                <li><ol>
+                    <li><a href="javascript:void(0)"><span class="xl"></span>新浪微博</a></li>
+                    <li><a href="javascript:void(0)"><span class="tx"></span>腾讯微博</a></li>
+                    <li><a href="javascript:void(0)"><span class="rr"></span>人人网</a></li>
+                    <li><a href="javascript:void(0)"><span class="qq"></span>QQ</a></li>
+                </ol></li>
+                <li><ol>
+                    <li><a href="javascript:void(0)">关于我们</a></li>
+                    <li><a href="javascript:void(0)">关于游戏</a></li>
+                    <li><a href="javascript:void(0)">新闻中心</a></li>
+                    <li><a href="javascript:void(0)">人才招聘</a></li>
+                </ol></li>
+                <li style="margin-left: 50px;"><ol>
+                    <li><img src="css/img/kefu.jpg" ></li>
+                    <li><font color="white" style="margin-left: 40px;">客服电话:110</font></li>
+                </ol></li>
+
+            </ul>
+        </div>
+        <div id="final">
+            <img src="css/img/9XpPN9Je3m.png" >
+            <h6>随便写写</h6>
+        </div>
     </div>
-</div>
-<div id="service">
-    <div class="box" id="box_1"></div>
-    <div class="box" id="box_2"></div>
-    <div class="box" id="box_3"></div>
-    <div class="box" id="box_4"></div>
-    <div class="box" id="box_5"></div>
-    <div class="box" id="box_6"></div>
-    <div class="box" id="box_7"></div>
-    <div class="box" id="box_8"></div>
-    <div class="box" id="box_9"></div>
-</div>
-<div id="footer"></div>
-</div>
 </body>
 </html>
