@@ -8,6 +8,7 @@
   <artifactId>takeaway</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
+  <!--配置maven编译运行jdk环境-->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>14</maven.compiler.source>
