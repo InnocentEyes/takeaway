@@ -75,12 +75,13 @@
     </dependency>
 
     <!--  方便使用get、set  -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.20</version>
-      <scope>provided</scope>
-    </dependency>
+    <!--不必使用lombok 代码美观 但可读性差-->
+<!--    <dependency>-->
+<!--      <groupId>org.projectlombok</groupId>-->
+<!--      <artifactId>lombok</artifactId>-->
+<!--      <version>1.18.20</version>-->
+<!--      <scope>provided</scope>-->
+<!--    </dependency>-->
   </dependencies>
 
   <build>

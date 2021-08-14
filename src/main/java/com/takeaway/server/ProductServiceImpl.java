@@ -2,16 +2,14 @@ package com.takeaway.server;
 
 import com.takeaway.mapper.ProductMapper;
 import com.takeaway.pojo.Product;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
+@Service(value = "ProductService")
 public class ProductServiceImpl {
 
-    ProductMapper productMapper;
+    ProductMapper productMapper = null;
 
     public List<Product> queryAll(){
         return productMapper.queryAll();
