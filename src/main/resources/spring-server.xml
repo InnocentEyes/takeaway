@@ -11,11 +11,6 @@
     <!-- 读取properties配置文件信息   -->
     <import resource="classpath:spring-mybatis.xml"></import>
 
-    <context:component-scan base-package="com.takeaway.server"/>
-
-    <bean id="product" class="com.takeaway.server.ProductServiceImpl">
-        <property name="productMapper" ref="productMapper"></property>
-    </bean>
-
+    <context:component-scan base-package="com.takeaway.service"/>
 
 </beans>

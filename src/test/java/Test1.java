@@ -1,5 +1,4 @@
 import com.takeaway.mapper.MemberMapper;
-import com.takeaway.mapper.ProductMapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -21,17 +20,9 @@ public class Test1 {
 
 
 
-
-    @Test
-    public void test2(){
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
-        ProductMapper productMapper = (ProductMapper)applicationContext.getBean("productMapper");
-        System.out.println(productMapper.queryAll());
-    }
-
     //测试Member数据接口是否正常读取数据
     @Test
-    public void test3(){
+    public void test2(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
         MemberMapper productMapper = (MemberMapper)applicationContext.getBean("memberMapper");
         System.out.println(productMapper.queryById(1,"111111"));
