@@ -11,6 +11,9 @@
     <!-- 读取properties配置文件信息   -->
     <import resource="classpath:spring-mybatis.xml"></import>
 
-    <context:component-scan base-package="com.takeaway.server"/>
+    <context:component-scan base-package="com.takeaway.service"/>
 
+    <bean id="MemberServiceImpl" class="com.takeaway.service.MemberServiceImpl">
+        <property name="memberMapper" ref="memberMapper"></property>
+    </bean>
 </beans>

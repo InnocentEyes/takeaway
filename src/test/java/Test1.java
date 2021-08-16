@@ -1,6 +1,10 @@
 import com.takeaway.mapper.MemberMapper;
+import com.takeaway.service.MemberService;
+import com.takeaway.service.MemberServiceImpl;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -35,5 +39,15 @@ public class Test1 {
         map.put("nick","adfadfasd10");
         map.put("password","100000000");
         System.out.println(productMapper.signinMember(map));
+    }
+
+
+
+    //测试Service调用情况
+    @Test
+    public void test3(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-server.xml");
+        MemberServiceImpl memberServiceImple = (MemberServiceImpl)applicationContext.getBean("memberServiceImpl");
+        System.out.println(memberServiceImple.queryById(1, "555555"));
     }
 }
