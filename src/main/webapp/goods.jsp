@@ -172,16 +172,176 @@
                 <p>本游戏商城提供各种游戏的售卖以及游戏周边的售卖!<br>
                     欢迎大家分享本游戏商城感谢您的合作!<br>
                 </p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">了解更多</a></p>
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 50px;">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border: 2px solid black;">
-            <div class=""></div>
+</div>
+<div class="container">
+    <div class="be-comment-block">
+        <h1 class="comments-title">评论 (4)</h1>
+        <div class="be-comment">
+            <div class="be-img-comment">
+                <a href="blog-detail-2.html">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="be-ava-comment">
+                </a>
+            </div>
+            <div class="be-comment-content">
+
+									<span class="be-comment-name">
+										<a href="blog-detail-2.html">邱泽林</a>
+										</span>
+                <span class="be-comment-time">
+										<i class="fa fa-clock-o"></i>
+										May 27, 2015 at 3:14am
+									</span>
+
+                <p class="be-comment-text">
+                    这个商城真是酷毙了!
+                </p>
+            </div>
+        </div>
+        <div class="be-comment">
+            <div class="be-img-comment">
+                <a href="blog-detail-2.html">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="be-ava-comment">
+                </a>
+            </div>
+            <div class="be-comment-content">
+								<span class="be-comment-name">
+									<a href="blog-detail-2.html">吴棉锋</a>
+								</span>
+                <span class="be-comment-time">
+									<i class="fa fa-clock-o"></i>
+									May 27, 2015 at 3:14am
+								</span>
+                <p class="be-comment-text">
+                    邱泽林真是酷毙了!
+                </p>
+            </div>
+        </div>
+        <div class="be-comment">
+            <div class="be-img-comment">
+                <a href="blog-detail-2.html">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="be-ava-comment">
+                </a>
+            </div>
+            <div class="be-comment-content">
+								<span class="be-comment-name">
+									<a href="blog-detail-2.html">邱汉钊</a>
+								</span>
+                <span class="be-comment-time">
+									<i class="fa fa-clock-o"></i>
+									May 27, 2015 at 3:14am
+								</span>
+                <p class="be-comment-text">
+                    邱泽林帅呆了!
+                </p>
+            </div>
+            <div class="be-comment">
+                <div class="be-img-comment">
+                    <a href="blog-detail-2.html">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="be-ava-comment">
+                    </a>
+                </div>
+                <div class="be-comment-content">
+								<span class="be-comment-name">
+									<a href="blog-detail-2.html">詹伟泰</a>
+								</span>
+                    <span class="be-comment-time">
+									<i class="fa fa-clock-o"></i>
+									May 27, 2015 at 3:14am
+								</span>
+                    <p class="be-comment-text">
+                        邱泽林帅呆了!
+                    </p>
+                </div>
+            </div>
+            <form class="form-block">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group fl_icon">
+                            <div class="icon"><i class="fa fa-user"></i></div>
+                            <input class="form-input" type="text" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 fl_icon">
+                        <div class="form-group fl_icon">
+                            <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                            <input class="form-input" type="text" placeholder="用户邮箱">
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <textarea class="form-input" required="" placeholder="发表你的评论吧!"></textarea>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary pull-right">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" style="position: relative; left: 400px;">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
+
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Pepper.</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <ul class="list-unstyled">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="mb-1">605, RATAN ICON BUILDING</p>
+                        <p>SEAWOODS SECTOR</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Pepper All Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> anirudh@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 
 </body>
