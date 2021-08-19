@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>注册登录页面</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 </head>
 <body>
 <div class="container">
@@ -48,7 +48,7 @@
         <div class="leftbox">
             <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
             <p class="desc">Pick your perfect <span>bouquet</span></p>
-            <img class="flower smaller" src="css/img/webp.webp" />
+            <img class="flower smaller" src="${pageContext.request.contextPath}/css/img/webp.webp" />
             <p class="account">Have an account?</p>
             <button class="button" id="signin">Login</button>
         </div>
@@ -56,7 +56,7 @@
         <div class="rightbox">
             <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
             <p class="desc">Pick your perfect <span>bouquet</span></p>
-            <img class="flower" src="css/img/webp.webp"/>
+            <img class="flower" src="${pageContext.request.contextPath}/css/img/webp.webp"/>
             <p class="account">Don't have an account?</p>
             <button class="button" id="signup">Sign Up</button>
         </div>
@@ -64,7 +64,7 @@
 </div>
 
 <!-- partial -->
-<script src="js/jquery-3.6.0.js"/>
-<script src="js/index.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.js"></script>
+<script src="${pageContext.request.contextPath}/js/index.js"></script>
 </body>
 </html>

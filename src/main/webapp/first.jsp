@@ -11,10 +11,10 @@
 <head>
     <meta charset="utf-8">
     <title>首页</title>
-    <link rel="stylesheet" type="text/css" href="css/first.css"/>
-    <script src="js/jquery-3.6.0.js"></script>
-    <script src="js/Filickity.js"></script>
-    <script src="js/banner.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/first.css"/>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.6.0.js"></script>
+    <script src="${pageContext.request.contextPath}/js/Filickity.js"></script>
+    <script src="${pageContext.request.contextPath}/js/banner.js"></script>
 </head>
 <body>
 <div id="container">
@@ -113,13 +113,13 @@
                     </div>
                 </div>
                 <div class="box_left">
-                    <div class="img_1 "><img src="../css/img/game_two.png" ><p>鬼泣</p>
+                    <div class="img_1 "><img src="${pageContext.request.contextPath}/css/img/game_two.png" ><p>鬼泣</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div class="img_3"><img src="../css/img/game_one.png" ><p>GTA5</p>
+                    <div class="img_3"><img src="${pageContext.request.contextPath}/css/img/game_one.png" ><p>GTA5</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div class="img_2 "><img src="../css/img/game_three.png" ><p>我的世界</p>
+                    <div class="img_2 "><img src="${pageContext.request.contextPath}/css/img/game_three.png" ><p>我的世界</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="css/img/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                 </div>
@@ -164,14 +164,14 @@
                     <li><a href="javascript:void(0)">人才招聘</a></li>
                 </ol></li>
                 <li style="margin-left: 50px;"><ol>
-                    <li><img src="css/img/kefu.jpg" ></li>
+                    <li><img src="${pageContext.request.contextPath}/css/img/kefu.jpg" ></li>
                     <li><font color="white" style="margin-left: 40px;">客服电话:110</font></li>
                 </ol></li>
 
             </ul>
         </div>
         <div id="final">
-            <img src="css/img/9XpPN9Je3m.png" >
+            <img src="${pageContext.request.contextPath}/css/img/9XpPN9Je3m.png" >
             <h6>随便写写</h6>
         </div>
     </div>

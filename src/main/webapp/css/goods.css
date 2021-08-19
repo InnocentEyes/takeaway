@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family:goods;
+	src: url('img/JiZiJingDianDaBiaoSongJianFan-Shan(GEETYPE-DaBiaoSongGBT-Flash)-2.ttf');
+}
+body{
+	font-family:goods ;
+}
+ul,li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.first{
+	text-align: center;
+}
+.first img{
+	margin-top: 2rem;
+	width: 8rem;
+	height: 8rem;
+}
+.goods_img{
+	margin-top:100px;
+	width: 100%;
+	height: 400px;
+	display: block;
+	border: 2px solid black;
+}
+.goods_img img{
+	width: 100%;
+	height: 100%;
+}
+.collect{
+	text-align: center;
+}
+.p-price{
+	color: #e4393c;
+	margin-right: 10px;
+}
+.p-price .price{
+	font-size: 22px;
+	margin-right: 10px;
+}
+.p-price .price a{
+	color: #005aa0;
+	vertical-align: 2px;
+	font-size: 12px;
+}
+.summary-line {
+    height: 0;
+    overflow: hidden;
+    border-bottom: 1px dotted #dfdfdf;
+    margin-bottom: 15px;
+}
