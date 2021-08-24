@@ -34,8 +34,7 @@ public class LoginController {
         if (members != null){
             msg = "first";
         }
-//        return msg;
-        return "你好";
+        return msg;
     }
 
     @PostMapping (value = "/register")
