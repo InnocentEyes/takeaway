@@ -91,7 +91,6 @@ create table if not exists `goods`(
     unique(`no`),
     primary key(`id`)
 )engine=InnoDB charset=utf8;
- drop table goods;
 
 /**
  *商品评论

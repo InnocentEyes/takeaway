@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <title>商品页面</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
     <script type="text/javascript">
         $(function(){
             $('#myButton').on('click', function () {
@@ -21,7 +21,7 @@
             })
         })
     </script>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/goods.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/goods.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
@@ -66,7 +66,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 first">
-            <img src="../css/img/9XpPN9Je3m.png" >
+            <img src="${pageContext.request.contextPath}/static/css/img/9XpPN9Je3m.png" >
         </div>
     </div>
     <div class="summary-line"></div>
@@ -111,7 +111,7 @@
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="goods_img col-xs-8 col-sm-8 col-md-8 col-lg-8" >
-                <img src="../css/img/show.jpg" >
+                <img src="${pageContext.request.contextPath}/static/css/img/show.jpg" >
             </div>
             <div class="collect col-xs-8 col-sm-8 col-md-8 col-lg-8"style="border: 2px solid #000000;">
                 <a href="javascript:void(0)">收藏</a>
