@@ -13,12 +13,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+/**
+ * 该控制器是做用户的登录和注册功能
+ */
+
 @Controller
 public class LoginController {
 
     @Autowired
     private MemberService memberService;
 
+    /**
+     * 登录处理器方法
+     * @param member 用户的ID 密码
+     * @return 登录成功跳转到首页 不成功则返回首页
+     */
     @ResponseBody
     @PostMapping(value = "/login",produces = "text/html;charset=utf-8")
     public String Login(Member member){
@@ -37,6 +46,11 @@ public class LoginController {
         return msg;
     }
 
+    /**
+     * 注册方法
+     * @param member 用户信息
+     * @return 与登陆一致
+     */
     @PostMapping (value = "/register")
     public String Register(@RequestParam Map<String,String> member){
         boolean flag = false;

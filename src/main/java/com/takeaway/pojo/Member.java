@@ -2,6 +2,9 @@ package com.takeaway.pojo;
 
 import java.util.Date;
 
+/**
+ * 会员实体类
+ */
 public class Member {
     private Integer id;
     private String email;
