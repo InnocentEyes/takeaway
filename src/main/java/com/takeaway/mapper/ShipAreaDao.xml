@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.ShipAreaDao">
+    <insert id="addShipArea">
+        insert into shiparea(area,cost) values (#{area},#{cost})
+    </insert>
+
+    <update id="updateShipArea">
+        update shiparea
+        <set>
+            <if test="area != null">
+                area = #{area}
+            </if>
+            <if test="cost != null">
+                cost = #{cost}
+            </if>
+        </set>
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteShipArea">
+        <if test="id = null">
+            delete shiparea where id = #{id}
+        </if>
+    </delete>
+
+    <select id="findShipAreaById" resultType="com.takeaway.pojo.ShipArea">
+        select id,area,cost from shiparea
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="findAllShipArea" resultType="com.takeaway.pojo.ShipArea">
+        select id,area,cost from shiparea
+    </select>
+</mapper>

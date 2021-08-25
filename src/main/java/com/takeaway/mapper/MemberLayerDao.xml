@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.MemberLayerDao">
+
+  <!--注意在用户初次注册时 默认mincredit creditscale赋值为0-->
+  <insert id="addMemberLayer">
+    insert into memberlayer(layer,mincredit,creditscale) values (#{layer},0,0)
+  </insert>
+
+  <update id="updateMemberLayer">
+    update memberlayer
+    <set>
+      <if test="layer != null">
+        layer = #{layer}
+      </if>
+      <if test="mincredit != null">
+        mincredit = #{mincredit}
+      </if>
+      <if test="creditscale != null">
+        creditscale  = #{creditscale}
+      </if>
+    </set>
+    <where>
+      <if test="id != null">
+        id = #{id}
+      </if>
+    </where>
+  </update>
+
+  <select id="findMemberLayerById" resultType="com.takeaway.pojo.MemberLayer">
+    select id,layer,mincredit,creditscale from memberlayer
+    <where>
+      <if test="id != null">
+        id = #{id}
+      </if>
+    </where>
+  </select>
+
+  <select id="findAllMemberLayer" resultType="com.takeaway.pojo.MemberLayer">
+    select id,layer,mincredit,creditscale from memberlayer
+  </select>
+</mapper>

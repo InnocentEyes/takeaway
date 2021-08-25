@@ -173,10 +173,12 @@ create table if not exists `dict`(
     `no` varchar(80) comment '编号',
     `name` varchar(80) comment '名字',
     `type` int  comment '类型'
-)engine=InnoDB charset=utf8; 
+)engine=InnoDB charset=utf8;
 
-
-
+/**
+  增加shipaddress的外键参照shiparea的主键id
+ */
+alter table shipaddress add foreign key(areaid) references shiparea(id);
 
 
 

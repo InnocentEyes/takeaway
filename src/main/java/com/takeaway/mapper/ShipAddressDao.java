@@ -25,14 +25,14 @@ public interface ShipAddressDao {
 
     /**
      * 用户操作:删除用户的送货地址
-     * @param id
+     * @param memeber_id
      * @return
      */
     boolean deleteShipAddress(@Param("id") Integer memeber_id);
 
     /**
      * 管理员操作:根据id查找用户所有的送货地址
-     * @param id
+     * @param member_id
      * @return
      */
     List<ShipAddress> findShipAddressById(@Param("id") Integer member_id);

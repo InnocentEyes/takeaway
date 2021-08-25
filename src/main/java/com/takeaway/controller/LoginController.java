@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Map;
 
 /**
+ * @author qzlzzz
  * 该控制器是做用户的登录和注册功能
  */
 
