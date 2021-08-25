@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.GoodsDao">
+    <insert id="addGood">
+        insert into goods(no,name,typeno,desc,img,price,qty,discount)
+        values (#{no},#{name},#{typeNo},#{desc},#{img},#{price},#{discount})
+    </insert>
+
+    <update id="updateGood">
+        update goods
+        <set>
+            <if test="no != null">
+                no = #{no},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="typeNo != null">
+                typeno = #{typeNo},
+            </if>
+            <if test="desc != null">
+                desc = #{desc},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="discount != null">
+                discount = #{discount}
+            </if>
+        </set>
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteGood">
+        <if test="id != null">
+            delete goods where id = #{id}
+        </if>
+    </delete>
+
+    <resultMap id="sql" type="com.takeaway.pojo.Goods">
+        <id column="typeno" property="typeNo"/>
+    </resultMap>
+    <!--可将sql语句 写进<if test="id != null">中 加强判断 可改进-->
+    <select id="findGoodsById" resultMap="sql">
+        select * from goods
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <!--建议是将*写成具体东西 作者偷懒 不写-->
+    <select id="findAllGoods" resultMap="sql">
+        select * from goods
+    </select>
+
+    <!--建议是将*写成具体东西 作者偷懒 不写-->
+    <select id="findGoodsCount" resultMap="sql">
+        select count (*) from goods where typeno = #{typeno}
+    </select>
+</mapper>

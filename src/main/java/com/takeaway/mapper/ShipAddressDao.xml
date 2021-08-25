@@ -36,6 +36,7 @@
         <id column="telno" property="telno"/>
     </resultMap>
 
+    <!--可将sql语句 写进<if test="id != null">中 加强判断 可改进-->
     <!--这里的*最好换为实际的 Id,address等 提高查找的效率 但由于作者要偷懒所以写了*-->
     <select id="findShipAddressById" resultMap="findShipAdressById_sql">
         select * from shipaddress where id = #{id}
