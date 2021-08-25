@@ -4,23 +4,39 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.takeaway.mapper.MemberMapper">
     <select id="queryById" resultType="Member">
-        select * from member where id = #{id} and password = #{pwd};
+        select * from member where id = #{id} and password = #{pwd}
     </select>
 
     <insert id="signinMember" parameterType="map">
-        insert into member (email,nick,password,credit,layerid) value (#{email},#{nick},#{password},0,1);
+        insert into member (email,nick,password,credit,layerid) value (#{email},#{nick},#{password},0,1)
     </insert>
 
     <update id="updateMember" parameterType="map">
         update member
         <set>
-            <if test="email != null">email=#{email},</if>
-            <if test="nick != null">nick=#{nick},</if>
-            <if test="password != null">password=#{password},</if>
-            <if test="credit != null">credit=#{credit},</if>
-            <if test="layerid != null">layerid=#{layerid},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="nick != null">nick = #{nick},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="credit != null">credit = #{credit},</if>
+            <if test="layerid != null">layerid = #{layerid},</if>
         </set>
         where id = #{id};
     </update>
+    
+    <update id="resetPassword">
+        update member
+        <set>
+            <if test="pwd != null">password = #{pwd}</if>
+        </set>
+        <where>
+            <if test="id != null">id = #{id}</if>
+        </where>
+    </update>
+
+    <delete id="deleteMember">
+        <if test="id != null">
+            delete member where id = #{id}
+        </if>
+    </delete>
 
 </mapper>

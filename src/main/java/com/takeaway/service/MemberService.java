@@ -14,4 +14,5 @@ public interface MemberService {
 
     //更新会员信息
     boolean updateMember(Map map);
+
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.ShipAddressDao">
+
+    <insert id="addShipAddress">
+      insert into shipaddress(memberid,name,areaid,adress,zipcode,telno,isDefault)
+      values (#{memberId},#{name},#{areaId},#{address},#{telno},0)
+    </insert>
+
+    <update id="updateShipAddress">
+        update shipaddress
+        <set>
+            <if test="memberId != null">memberid = #{memberId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="areaId != null">areaid = #{areaId},</if>
+            <if test="address != null">adress = #{address},</if>
+            <if test="telno != null">telno = #{telno}</if>
+        </set>
+    </update>
+
+    <delete id="deleteShipAddress">
+        <if test="id != null">
+            delete shipaddress where id = #{id}
+        </if>
+    </delete>
+
+    <resultMap id="findShipAdressById_sql" type="com.takeaway.pojo.ShipAddress">
+        <id column="id" property="id"/>
+        <id column="memberid" property="memberId"/>
+        <id column="name" property="name"/>
+        <id column="areaid" property="areaId"/>
+        <id column="adress" property="address"/>
+        <id column="zipcode" property="zipcode"/>
+        <id column="telno" property="telno"/>
+    </resultMap>
+
+    <!--这里的*最好换为实际的 Id,address等 提高查找的效率 但由于作者要偷懒所以写了*-->
+    <select id="findShipAddressById" resultMap="findShipAdressById_sql">
+        select * from shipaddress where id = #{id}
+    </select>
+
+    <delete id="clearDefaultAddress">
+        <if test="id != nul">
+            delete shipaddress where id = #{id}
+        </if>
+    </delete>
+
+</mapper>

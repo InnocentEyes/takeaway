@@ -1,15 +1,14 @@
 package com.takeaway.controller;
 
 import com.takeaway.exception.NotEnoughtException;
-import com.takeaway.mapper.MemberMapper;
 import com.takeaway.pojo.Member;
 import com.takeaway.service.MemberService;
+import com.takeaway.util.BASE64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
@@ -39,7 +38,7 @@ public class LoginController {
             throw new NotEnoughtException("用户未输入密码");
         }
 
-        Member members = memberService.queryById(member.getId(), member.getPassword());
+        Member members = memberService.queryById(member.getId(), BASE64.encode(member.getPassword()));
         if (members != null){
             msg = "first";
         }
@@ -58,6 +57,8 @@ public class LoginController {
         if (member.get("userName").equals("") || member.get("userEmail").equals("") || member.get("userPassword").equals("")){
             throw new NotEnoughtException("用户信息缺失!");
         }else {
+            String userPassword = BASE64.encode(member.get("userPassword"));
+            member.put("userPassword",userPassword);
             flag = memberService.signinMember(member);
         }
         if (flag == true){

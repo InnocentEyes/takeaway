@@ -13,6 +13,16 @@ public class ShipAddress {
     private String address;
     private String zipcode;
     private String telno;
+    private Integer isDefault;
+
+    public Integer getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(Integer isDefault) {
+        this.isDefault = isDefault;
+    }
+
 
 
     public Integer getId() {
@@ -99,6 +109,7 @@ public class ShipAddress {
                 ", address='" + address + '\'' +
                 ", zipcode='" + zipcode + '\'' +
                 ", telno='" + telno + '\'' +
+                ", isDefault=" + isDefault +
                 '}';
     }
 }

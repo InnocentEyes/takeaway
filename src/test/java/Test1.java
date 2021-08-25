@@ -1,6 +1,7 @@
 import com.takeaway.mapper.MemberMapper;
 import com.takeaway.service.MemberService;
 import com.takeaway.service.MemberServiceImpl;
+import com.takeaway.util.BASE64;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,15 @@ public class Test1 {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-server.xml");
         MemberServiceImpl memberServiceImple = (MemberServiceImpl)applicationContext.getBean("memberServiceImpl");
         System.out.println(memberServiceImple.queryById(1, "555555"));
+    }
+
+    //加密密码
+    @Test
+    public void test4(){
+        String password = "qzl200919yya";
+        String encode = BASE64.encode(password);
+        System.out.println(encode);
+        String decode = BASE64.decode(encode);
+        System.out.println(decode);
     }
 }

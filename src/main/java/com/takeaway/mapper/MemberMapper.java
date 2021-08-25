@@ -4,6 +4,7 @@ import com.takeaway.pojo.Member;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
 import java.util.Map;
 
 @Mapper //可加可不加，已经在spring-mybatis.xml已经实现扫描注入spring
@@ -17,5 +18,11 @@ public interface MemberMapper {
 
     //更新会员信息
     boolean updateMember(Map map);
+
+    //重置密码
+    boolean resetPassword(@Param("id") Integer user_id,@Param("pwd") String user_pwd);
+
+    //根据ID删除会员
+    boolean deleteMember(@Param("id") Integer user_id);
 
 }
