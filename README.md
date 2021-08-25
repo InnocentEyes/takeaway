@@ -1,5 +1,5 @@
 # takeaway
-    这是一个由mybatis+spring+spring mvc构成的外卖系统的项目。
+    这是一个由mybatis+spring+spring mvc构成的游戏商城系统的项目。
 ## 开发者要求
     开发者要求如下:
         后端采用spring+spring mvc + mybatis技术
