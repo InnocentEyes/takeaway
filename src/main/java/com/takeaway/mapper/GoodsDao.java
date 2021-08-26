@@ -57,7 +57,7 @@ public interface GoodsDao {
      * @param type
      * @return
      */
-    boolean findGoodsCount(@Param("typeno") String type);
+    int findGoodsCount(@Param("typeno") String type);
 
 
 }

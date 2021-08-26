@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.CollectDao">
+
+    <insert id="addCollect">
+        insert into collect(memberid,goodsid)
+        values (#{memberid},#{goodsNo})
+    </insert>
+
+    <delete id="deleteCollect">
+        <if test="id != null">
+            delete from collect where id = #{id}
+        </if>
+    </delete>
+
+    <resultMap id="collect_sql" type="com.takeaway.pojo.Collect">
+        <id column="id" property="id"/>
+        <id column="memberid" property="memberid"/>
+        <id column="goodsid" property="goodsNo"/>
+        <id column="coltime" property="colTime"/>
+    </resultMap>
+    <select id="findAllCollect" resultMap="collect_sql">
+        select id,goodsid,coltime from collect where memberid = #{memberid}
+    </select>
+
+    <select id="findCollectCount" resultType="int">
+        select count(*) from collect where memberid = #{memberid}
+    </select>
+</mapper>

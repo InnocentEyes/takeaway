@@ -26,7 +26,7 @@
 
     <delete id="deleteShipArea">
         <if test="id = null">
-            delete shiparea where id = #{id}
+            delete from shiparea where id = #{id}
         </if>
     </delete>
 

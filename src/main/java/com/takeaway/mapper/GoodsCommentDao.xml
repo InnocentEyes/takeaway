@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.GoodsCommentDao">
+
+    <insert id="addGoodsComment">
+      insert into goodscomment(memberid,goodsid,score,desc)
+      values (#{memberid},#{goodsNo},#{score},#{desc})
+    </insert>
+
+    <resultMap id="goodsComment_sql" type="com.takeaway.pojo.GoodsComment">
+      <id column="id" property="id"/>
+      <id column="memberid" property="memberid"/>
+      <id column="goodsid" property="goodsNo"/>
+      <id column="pubtime" property="pubTime"/>
+      <id column="score" property="score"/>
+      <id column="desc" property="desc"/>
+    </resultMap>
+    <select id="findAllGoodsComment" resultMap="goodsComment_sql">
+        select id,memberid,goodsid,pubtime,score,desc from goodscomment
+    </select>
+
+    <select id="findGoodsCommentByNo" resultType="int">
+        select count(*) from goodscomment
+        <where>
+          <if test="no != null">
+            goodsid = #{no}
+          </if>
+        </where>
+    </select>
+
+</mapper>

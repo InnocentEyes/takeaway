@@ -8,4 +8,4 @@
         maven依赖和jquery的版本clone下来便无需改变，只需发挥你的技术在项目中即可。
         后续补充...
 ### 团队成员
-    qzlzzz Orange橙橙 godiva521
+    qzlzzz Orange橙橙 godiva521 Liuxxyf

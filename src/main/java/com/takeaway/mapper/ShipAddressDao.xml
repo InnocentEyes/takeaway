@@ -22,7 +22,7 @@
 
     <delete id="deleteShipAddress">
         <if test="id != null">
-            delete shipaddress where id = #{id}
+            delete from shipaddress where id = #{id}
         </if>
     </delete>
 

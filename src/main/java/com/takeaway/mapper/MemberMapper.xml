@@ -35,7 +35,7 @@
 
     <delete id="deleteMember">
         <if test="id != null">
-            delete member where id = #{id}
+            delete from member where id = #{id}
         </if>
     </delete>
 

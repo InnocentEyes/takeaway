@@ -42,7 +42,7 @@
 
     <delete id="deleteGood">
         <if test="id != null">
-            delete goods where id = #{id}
+            delete from goods where id = #{id}
         </if>
     </delete>
 
@@ -65,7 +65,7 @@
     </select>
 
     <!--建议是将*写成具体东西 作者偷懒 不写-->
-    <select id="findGoodsCount" resultMap="sql">
+    <select id="findGoodsCount" resultType="int">
         select count (*) from goods where typeno = #{typeno}
     </select>
 </mapper>
