@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.OrderDao">
+    <insert id="addOrder" >
+        insert into orders(orderno,memberid,credit,shipaddressid,shiptype,paytype,amount,creditused,status,handle)
+        values
+        (#{name},#{type},#{credit},#{shipAddressId},#{shipType},#{payType},#{amount},#{creditUsed},#{status},#{handle})
+    </insert>
+
+    <resultMap id="order_sql" type="com.takeaway.pojo.Orders">
+        <id column="id" property="no"/>
+        <id column="orderno" property="name"/>
+        <id column="memberid" property="type"/>
+        <id column="credit" property="credit"/>
+        <id column="shipaddressid" property="shipAddressId"/>
+        <id column="shiptype" property="shipType"/>
+        <id column="paytype" property="payType"/>
+        <id column="ordertime" property="orderTime"/>
+        <id column="amount" property="amount"/>
+        <id column="creditused" property="creditUsed"/>
+        <id column="status" property="status"/>
+        <id column="handle" property="handle"/>
+    </resultMap>
+
+    <select id="findAllOrder" resultMap="order_sql">
+        select orderno,adress,ordertime,amount,paytype from orders,shipaddress where orders.shipaddressid = shipaddress.id
+    </select>
+
+    <select id="findOrderById" resultMap="order_sql">
+        select * from orders where id = #{orderId}
+    </select>
+
+</mapper>

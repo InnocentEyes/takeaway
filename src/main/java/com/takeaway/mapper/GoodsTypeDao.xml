@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.GoodsTypeDao">
+    <insert id="addGoodsType">
+      insert into goodstype(no,name,parenttype,desc,img)
+      values (#{no},#{name},#{parentType},#{desc},#{img})
+    </insert>
+
+    <update id="updateGoodsType">
+      update goodstype
+      <set>
+        <if test="no != null">
+          no = #{no},
+        </if>
+        <if test="name != null">
+          name = #{name},
+        </if>
+        <if test="parentType != null">
+          parenttype = #{parentType},
+        </if>
+        <if test="desc != null">
+          desc = #{desc},
+        </if>
+        <if test="img != null">
+          img = #{img}
+        </if>
+      </set> 
+      <where>
+        <if test="id != null">
+          id = #{id}
+        </if>
+      </where>
+    </update>
+
+    <resultMap id="goodsType_sql" type="com.takeaway.pojo.GoodType">
+      <id column="id" property="id"/>
+      <id column="no" property="no"/>
+      <id column="name" property="name"/>
+      <id column="parenttype" property="parentType"/>
+      <id column="desc" property="desc"/>
+      <id column="img" property="img"/>
+    </resultMap>
+
+    <select id="findParentGoodsType" resultMap="goodsType_sql">
+        select parenttype from goodstype group by parenttype
+    </select>
+
+    <select id="findChildGoodsTypeById" resultMap="goodsType_sql">
+        select name from goodstype where parenttype = #{parentType}
+    </select>
+
+</mapper>
