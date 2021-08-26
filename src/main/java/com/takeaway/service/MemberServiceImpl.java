@@ -1,8 +1,8 @@
 package com.takeaway.service;
 
-import com.takeaway.exception.NotEnoughtException;
 import com.takeaway.mapper.MemberMapper;
 import com.takeaway.pojo.Member;
+import com.takeaway.util.BASE64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -21,23 +21,101 @@ public class MemberServiceImpl implements MemberService{
             propagation = Propagation.REQUIRED,rollbackFor = {
             NullPointerException.class
     })
-    public Member queryById(Integer user_id, String user_pwd) {
-        return memberMapper.queryById(user_id,user_pwd);
+    @Override
+    public boolean queryByNick(String user_nick, String user_pwd) {
+        boolean flag = false;
+        if(memberMapper != null){
+            Member member = memberMapper.queryByNick(user_nick);
+            String userPassword = BASE64.decode(member.getPassword());
+            if (userPassword.equals(user_pwd)){
+                flag = true;
+            }
+        }
+        return flag;
     }
 
     @Transactional(isolation = Isolation.REPEATABLE_READ,
             propagation = Propagation.REQUIRED,rollbackFor = {
             NullPointerException.class
     })
+    @Override
     public boolean signinMember(Map map) {
-        return memberMapper.signinMember(map);
+        boolean flag = false;
+        if (memberMapper != null){
+            String userPassword = BASE64.encode((String) map.get("password"));
+            map.put("password",userPassword);
+            flag = memberMapper.signinMember(map);
+        }
+        return flag;
     }
 
     @Transactional(isolation = Isolation.REPEATABLE_READ,
             propagation = Propagation.REQUIRED,rollbackFor = {
             NullPointerException.class
     })
+    @Override
     public boolean updateMember(Map map) {
-        return memberMapper.updateMember(map);
+        boolean flag = false;
+        String nick = (String) map.get("nick");
+        if (memberMapper != null){
+            if (!map.get("password").equals("")){
+                if (memberMapper.queryByNick(nick) == null){
+                    String userPassword = (String) map.get("password");
+                    map.put("password",BASE64.encode(userPassword));
+                    flag = memberMapper.updateMember(map);
+                }
+            }
+        }
+        return flag;
+    }
+
+    @Transactional(isolation = Isolation.REPEATABLE_READ,
+            propagation = Propagation.REQUIRED,rollbackFor = {
+            NullPointerException.class
+    })
+    @Override
+    public boolean resetPassword(String user_nick, String user_pwd,String reset_pwd) {
+        boolean flag = false;
+        if (memberMapper != null){
+            user_pwd = BASE64.encode(user_pwd);
+            flag = queryByNick(user_nick, user_pwd);
+            if (flag == true){
+                reset_pwd = BASE64.encode(reset_pwd);
+                flag = memberMapper.resetPassword(user_nick,reset_pwd);
+            }
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean resetPassword(String user_nick, String user_pwd) {
+        boolean flag = false;
+        if (memberMapper != null){
+            user_pwd = BASE64.encode(user_pwd);
+            flag = memberMapper.resetPassword(user_nick, user_pwd);
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean deletePassword(String user_nick, String user_pwd) {
+        boolean flag = false;
+        if (memberMapper != null){
+            user_pwd = BASE64.encode(user_pwd);
+            flag = queryByNick(user_nick,user_pwd);
+            if (flag == true){
+                flag = memberMapper.deleteMember(user_nick);
+            }
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean deletePassword(String user_nick) {
+        boolean flag = false;
+        if (memberMapper != null){
+            flag = memberMapper.deleteMember(user_nick);
+        }
+        return flag;
     }
 }

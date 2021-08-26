@@ -28,9 +28,10 @@ public class Test1 {
     //测试Member数据接口是否正常读取数据
     @Test
     public void test2(){
+        /*
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
         MemberMapper productMapper = (MemberMapper)applicationContext.getBean("memberMapper");
-        System.out.println(productMapper.queryById(1,"111111"));
+        System.out.println(productMapper.queryById(1));
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("id",1);
         map.put("password",555555);
@@ -40,6 +41,7 @@ public class Test1 {
         map.put("nick","adfadfasd10");
         map.put("password","100000000");
         System.out.println(productMapper.signinMember(map));
+        */
     }
 
 
@@ -47,9 +49,10 @@ public class Test1 {
     //测试Service调用情况
     @Test
     public void test3(){
+        /*
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-server.xml");
         MemberServiceImpl memberServiceImple = (MemberServiceImpl)applicationContext.getBean("memberServiceImpl");
-        System.out.println(memberServiceImple.queryById(1, "555555"));
+        System.out.println(memberServiceImple.queryById(1, "555555"));*/
     }
 
     //加密密码

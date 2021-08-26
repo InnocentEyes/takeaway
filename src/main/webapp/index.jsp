@@ -23,9 +23,9 @@
             <div class="signup nodisplay">
                 <h1>Register</h1>
                 <form autocomplete="off" method="post" action="${pageContext.request.contextPath}/register">
-                    <input id="register_userName" name="userName" type="text" placeholder="Username" />
-                    <input id="register_userEmail"  name="userEmail" type="email" placeholder="Email">
-                    <input id="register_userPassword"  name="userPassword" type="password" placeholder="Password">
+                    <input id="register_userName" name="nick" type="text" placeholder="Username" />
+                    <input id="register_userEmail"  name="email" type="email" placeholder="Email">
+                    <input id="register_userPassword"  name="password" type="password" placeholder="Password">
                     <input type="password" placeholder="Confirm Password">
                     <button class="button" id="register">Create Account</button>
                 </form>
@@ -35,8 +35,8 @@
             <div class="signin">
                 <h1>Sign In</h1>
                 <form class="more-padding" autocomplete="off" method="post" action="${pageContext.request.contextPath}/login">
-                    <input id="sign_userName" type="text" placeholder="Username">
-                    <input id="sign_userPassword" type="password" placeholder="Password">
+                    <input id="sign_userName" name="nick" type="text" placeholder="Username">
+                    <input id="sign_userPassword" name="password" type="password" placeholder="Password">
                     <div class="checkbox">
                         <input type="checkbox" id="remember" /><label for="remember">Remember me</label>
                     </div>

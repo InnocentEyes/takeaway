@@ -9,9 +9,12 @@ import java.util.Map;
 
 @Mapper //可加可不加，已经在spring-mybatis.xml已经实现扫描注入spring
 public interface MemberMapper {
+    @Deprecated
+    //用户登录
+    Member queryById(@Param("id") Integer user_id,@Param("pwd") String user_pwd);
 
     //用户登录
-    Member queryById(@Param("id")Integer user_id, @Param("pwd") String user_pwd);
+    Member queryByNick(@Param("nick")String user_nick);
 
     //注册会员
     boolean signinMember(Map map);
@@ -20,9 +23,10 @@ public interface MemberMapper {
     boolean updateMember(Map map);
 
     //重置密码
-    boolean resetPassword(@Param("id") Integer user_id,@Param("pwd") String user_pwd);
+    boolean resetPassword(@Param("nick") String user_nick,@Param("pwd") String user_pwd);
 
     //根据ID删除会员
-    boolean deleteMember(@Param("id") Integer user_id);
+    boolean deleteMember(@Param("nick") String user_nick);
+
 
 }

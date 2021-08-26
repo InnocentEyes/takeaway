@@ -3,8 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.takeaway.mapper.MemberMapper">
+
     <select id="queryById" resultType="Member">
         select * from member where id = #{id} and password = #{pwd}
+    </select>
+
+    <select id="queryByNick" resultType="Member">
+        select * from member where nick = #{nick}
     </select>
 
     <insert id="signinMember" parameterType="map">
@@ -15,12 +20,11 @@
         update member
         <set>
             <if test="email != null">email = #{email},</if>
-            <if test="nick != null">nick = #{nick},</if>
             <if test="password != null">password = #{password},</if>
             <if test="credit != null">credit = #{credit},</if>
             <if test="layerid != null">layerid = #{layerid},</if>
         </set>
-        where id = #{id};
+        where nick = #{nick};
     </update>
     
     <update id="resetPassword">
@@ -29,13 +33,13 @@
             <if test="pwd != null">password = #{pwd}</if>
         </set>
         <where>
-            <if test="id != null">id = #{id}</if>
+            <if test="nick != null">nick = #{nick}</if>
         </where>
     </update>
 
     <delete id="deleteMember">
-        <if test="id != null">
-            delete from member where id = #{id}
+        <if test="nick != null">
+            delete from member where nick = #{nick}
         </if>
     </delete>
 
