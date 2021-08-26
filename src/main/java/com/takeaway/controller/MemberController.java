@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -29,7 +30,7 @@ public class MemberController {
      */
     @ResponseBody
     @PostMapping(value = "/login",produces = "text/html;charset=utf-8")
-    public String Login(Member member){
+    public String Login(Member member, HttpSession session){
         String msg = "index";
         if (member.getNick().equals("") || member.getNick() == null){
             throw new NotEnoughtException("用户无账户名!");

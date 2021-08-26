@@ -1,5 +1,7 @@
 package com.takeaway.service;
 
+import com.takeaway.pojo.Member;
+
 import java.util.Map;
 
 public interface MemberService {

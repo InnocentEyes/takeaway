@@ -4,10 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.takeaway.mapper.MemberMapper">
 
+    <!--这里建议不写* 写具体的列名 由于作者偷懒所以没写 后者闲的话或者有强迫症的可以改-->
     <select id="queryById" resultType="Member">
         select * from member where id = #{id} and password = #{pwd}
     </select>
-
+    <!--这里建议不写* 写具体的列名 由于作者偷懒所以没写 后者闲的话或者有强迫症的可以改-->
+    <select id="findById" resultType="Member">
+        select * from member where id = #{id}
+    </select>
+    <!--这里建议不写* 写具体的列名 由于作者偷懒所以没写 后者闲的话或者有强迫症的可以改-->
     <select id="queryByNick" resultType="Member">
         select * from member where nick = #{nick}
     </select>

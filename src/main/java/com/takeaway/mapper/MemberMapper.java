@@ -13,6 +13,8 @@ public interface MemberMapper {
     //用户登录
     Member queryById(@Param("id") Integer user_id,@Param("pwd") String user_pwd);
 
+    Member findById(@Param("id") Integer user_id);
+
     //用户登录
     Member queryByNick(@Param("nick")String user_nick);
 
