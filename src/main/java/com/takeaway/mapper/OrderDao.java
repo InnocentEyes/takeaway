@@ -31,11 +31,34 @@ public interface OrderDao {
     List<Orders> findAllOrder();
 
     /**
+     * 根据用户ID查找用户所有的订单
+     * @param member_id
+     * @return
+     */
+    List<Orders> findMemberOrder(@Param("memberId") Integer member_id);
+
+    /**
+     * 根据用户ID查找用户所有的订单 以及对应订单所产生的积分
+     * @param member_id
+     * @return
+     */
+    List<Orders> findMemberOrderCredit(@Param("memberId") Integer member_id);
+
+    /**
      * 根据订单Id查出订单的明细
      * @param orderId
      * @return
      */
     Orders findOrderById(@Param("orderId") Integer orderId);
+
+    /**
+     * 根据用户的id查找用户的订单条数
+     * @param member_id
+     * @return
+     */
+    int findMemberOrderCount(@Param("memberId") Integer member_id);
+
+
 
 
 }

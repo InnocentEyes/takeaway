@@ -1,8 +1,9 @@
-package com.takeaway.service;
+package com.takeaway.service.Impl;
 
 import com.takeaway.mapper.MemberMapper;
 import com.takeaway.mapper.ShipAddressDao;
 import com.takeaway.pojo.ShipAddress;
+import com.takeaway.service.ShipAdressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;

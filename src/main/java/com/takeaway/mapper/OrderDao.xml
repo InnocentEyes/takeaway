@@ -24,12 +24,30 @@
         <id column="handle" property="handle"/>
     </resultMap>
 
+    <select id="findMemberOrder" resultMap="order_sql">
+        select orderno,memberid,adress,status from orders,shipaddress
+        where memberid = #{memberId} and orders.shipaddressid = shipaddress.id and orders.memberid = shipaddress.memberid
+    </select>
+
+    <select id="findMemberOrderCredit" resultMap="order_sql">
+        select orderno,ordertime,amount,credit from orders
+        <where>
+            <if test="memberId != null">
+                memberid = #{memberId}
+            </if>
+        </where>
+    </select>
+
     <select id="findAllOrder" resultMap="order_sql">
         select orderno,adress,ordertime,amount,paytype from orders,shipaddress where orders.shipaddressid = shipaddress.id
     </select>
 
     <select id="findOrderById" resultMap="order_sql">
         select * from orders where id = #{orderId}
+    </select>
+
+    <select id="findMemberOrderCount" resultType="int">
+        select count(*) from orders where memberid = #{memberId}
     </select>
 
 </mapper>

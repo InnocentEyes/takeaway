@@ -1,7 +1,8 @@
-package com.takeaway.service;
+package com.takeaway.service.Impl;
 
 import com.takeaway.mapper.MemberMapper;
 import com.takeaway.pojo.Member;
+import com.takeaway.service.MemberService;
 import com.takeaway.util.BASE64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import java.util.Map;
         NullPointerException.class
 })
 @Service
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
     @Autowired
     MemberMapper memberMapper;

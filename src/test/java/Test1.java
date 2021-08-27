@@ -1,16 +1,8 @@
-import com.takeaway.mapper.MemberMapper;
-import com.takeaway.service.MemberService;
-import com.takeaway.service.MemberServiceImpl;
 import com.takeaway.util.BASE64;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Test1 {
 
