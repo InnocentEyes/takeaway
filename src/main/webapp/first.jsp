@@ -41,11 +41,14 @@
     <div id="nav">
         <nav class="navMenu">
             <a href="#">HOME</a>
-            <a href="#">战术游戏</a>
-            <a href="#">RPG游戏</a>
-            <a href="#">竞技游戏</a>
+            <a id="game_one" href="#">战术游戏</a>
+            <a id="game_two" href="#">RPG游戏</a>
+            <a id="game_three" href="#">竞技游戏</a>
             <div class="dot"></div>
         </nav>
+    </div>
+    <div id="goods">
+
     </div>
 
     <div id="banner">
