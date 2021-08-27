@@ -25,7 +25,7 @@ public interface ShipAdressService {
 
     /**
      * 这里的Id不是主键ID 是用户Id
-     * @param id
+     * @param member_id
      * @return
      */
     List<ShipAddress> findAllShipAdressById(Integer member_id);
