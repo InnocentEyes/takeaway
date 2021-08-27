@@ -78,18 +78,22 @@ public class ShipAdressServiceImpl implements ShipAdressService {
     @Override
     public boolean deleteShipAdress(Integer member_id, Integer id) {
         boolean flag = false;
-        if (shipAdressDao != null){
-            flag = shipAdressDao.deleteShipAddressById(id,member_id);
+        if (shipAdressDao != null && memberMapper != null){
+            if (memberMapper.findById(member_id) != null) {
+                flag = shipAdressDao.deleteShipAddressById(id, member_id);
+            }
         }
-        return false;
+        return flag;
     }
 
     @Override
     public boolean deleteAllShipAdress(Integer member_id) {
         boolean flag = false;
-        if (shipAdressDao != null){
-            flag = shipAdressDao.deleteShipAddress(member_id);
+        if (shipAdressDao != null && memberMapper != null){
+            if (memberMapper.findById(member_id) != null) {
+                flag = shipAdressDao.deleteShipAddress(member_id);
+            }
         }
-        return false;
+        return flag;
     }
 }
