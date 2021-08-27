@@ -22,7 +22,13 @@
 
     <delete id="deleteShipAddress">
         <if test="id != null">
-            delete from shipaddress where id = #{id}
+            delete from shipaddress where memberid = #{id}
+        </if>
+    </delete>
+
+    <delete id="deleteShipAddressById">
+        <if test="id != null and memberid != null">
+            delete from shipaddress where memberid = #{memberid} and id = #{id}
         </if>
     </delete>
 
@@ -39,12 +45,12 @@
     <!--可将sql语句 写进<if test="id != null">中 加强判断 可改进-->
     <!--这里的*最好换为实际的 Id,address等 提高查找的效率 但由于作者要偷懒所以写了*-->
     <select id="findShipAddressById" resultMap="findShipAdressById_sql">
-        select * from shipaddress where id = #{id}
+        select * from shipaddress where memberid = #{id}
     </select>
 
     <delete id="clearDefaultAddress">
         <if test="id != nul">
-            delete shipaddress where id = #{id}
+            delete shipaddress where memberid = #{id}
         </if>
     </delete>
 

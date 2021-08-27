@@ -11,16 +11,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
+@Transactional(isolation = Isolation.REPEATABLE_READ,
+        propagation = Propagation.REQUIRED,rollbackFor = {
+        NullPointerException.class
+})
 @Service
 public class MemberServiceImpl implements MemberService{
 
     @Autowired
     MemberMapper memberMapper;
 
-    @Transactional(isolation = Isolation.REPEATABLE_READ,
-            propagation = Propagation.REQUIRED,rollbackFor = {
-            NullPointerException.class
-    })
+
     @Override
     public boolean queryByNick(String user_nick, String user_pwd) {
         boolean flag = false;
@@ -34,10 +35,7 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
-    @Transactional(isolation = Isolation.REPEATABLE_READ,
-            propagation = Propagation.REQUIRED,rollbackFor = {
-            NullPointerException.class
-    })
+
     @Override
     public boolean signinMember(Map map) {
         boolean flag = false;
@@ -49,10 +47,7 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
-    @Transactional(isolation = Isolation.REPEATABLE_READ,
-            propagation = Propagation.REQUIRED,rollbackFor = {
-            NullPointerException.class
-    })
+
     @Override
     public boolean updateMember(Map map) {
         boolean flag = false;
@@ -69,10 +64,7 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
-    @Transactional(isolation = Isolation.REPEATABLE_READ,
-            propagation = Propagation.REQUIRED,rollbackFor = {
-            NullPointerException.class
-    })
+
     @Override
     public boolean resetPassword(String user_nick, String user_pwd,String reset_pwd) {
         boolean flag = false;
@@ -87,6 +79,7 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
+
     @Override
     public boolean resetPassword(String user_nick, String user_pwd) {
         boolean flag = false;
@@ -97,8 +90,9 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
+
     @Override
-    public boolean deletePassword(String user_nick, String user_pwd) {
+    public boolean deleteMember(String user_nick, String user_pwd) {
         boolean flag = false;
         if (memberMapper != null){
             user_pwd = BASE64.encode(user_pwd);
@@ -110,12 +104,41 @@ public class MemberServiceImpl implements MemberService{
         return flag;
     }
 
+
     @Override
-    public boolean deletePassword(String user_nick) {
+    public boolean deleteMember(String user_nick) {
         boolean flag = false;
         if (memberMapper != null){
             flag = memberMapper.deleteMember(user_nick);
         }
         return flag;
+    }
+
+
+    @Override
+    public Member login(String user_nick, String user_pwd) {
+        boolean flag = false;
+        Member member = null;
+        if (memberMapper != null){
+            flag = queryByNick(user_nick, user_pwd);
+            if (flag == true){
+                member = memberMapper.queryByNick(user_nick);
+            }
+        }
+        return member;
+    }
+
+    @Override
+    public Member register(Map map) {
+        boolean flag = false;
+        Member member = null;
+        String user_nick = (String) map.get("nick");
+        if (memberMapper != null){
+            flag = signinMember(map);
+            if (flag == true){
+                member = memberMapper.queryByNick(user_nick);
+            }
+        }
+        return member;
     }
 }

@@ -39,8 +39,10 @@ public class MemberController {
             throw new NotEnoughtException("用户未输入密码");
         }
 
-        boolean flag = memberService.queryByNick(member.getNick(),member.getPassword());
-        if (flag == true){
+        Member login = memberService.login(member.getNick(), member.getPassword());
+        if (login != null){
+            session.setAttribute("userId",login.getId());
+            session.setAttribute("userLayer",login.getLayerid());
             return "first";
         }
         return msg;
@@ -52,15 +54,17 @@ public class MemberController {
      * @return 与登陆一致
      */
     @PostMapping (value = "/register")
-    public String Register(@RequestParam Map<String,String> member){
-        boolean flag = false;
+    public String Register(@RequestParam Map<String,String> member,HttpSession session){
+        Member members = null;
         String msg = "index";
         if (member.get("nick").equals("") || member.get("email").equals("") || member.get("password").equals("")){
             throw new NotEnoughtException("用户信息缺失!");
         }else {
-            flag = memberService.signinMember(member);
+            members = memberService.register(member);
         }
-        if (flag == true){
+        if (members != null){
+            session.setAttribute("userId",members.getId());
+            session.setAttribute("userLayer",members.getLayerid());
             msg = "first";
         }
         return msg;

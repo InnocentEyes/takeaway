@@ -4,10 +4,17 @@ import com.takeaway.pojo.Member;
 
 import java.util.Map;
 
+/**
+ * @author qzlzzz Orange橙橙
+ * 对修改关闭 对扩展开放 在修改时新增方法便可 无需改变原来的方法
+ */
 public interface MemberService {
-    //用户登录
+
+    @Deprecated
+    //用户登录,不推荐使用
     boolean queryByNick(String user_nick, String user_pwd);
 
+    @Deprecated
     //注册会员
     boolean signinMember(Map map);
 
@@ -38,7 +45,7 @@ public interface MemberService {
      * @param user_pwd
      * @return
      */
-    boolean deletePassword(String user_nick,String user_pwd);
+    boolean deleteMember(String user_nick,String user_pwd);
 
     /**
      * 不建议使用该方法 管理员页面注销用户
@@ -46,7 +53,20 @@ public interface MemberService {
      * @return
      */
     @Deprecated
-    boolean deletePassword(String user_nick);
+    boolean deleteMember(String user_nick);
 
+    /**
+     * 用来登录的真正方法
+     * @param user_nick
+     * @param user_pwd
+     * @return
+     */
+    Member login(String user_nick,String user_pwd);
 
+    /**
+     * 用于注册的真正方法
+     * @param map
+     * @return
+     */
+    Member register(Map map);
 }
