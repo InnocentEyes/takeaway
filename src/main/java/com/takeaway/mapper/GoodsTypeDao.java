@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.GoodType;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * @author qzlzzz
  */
+@Mapper
 public interface GoodsTypeDao {
     /**
      * 管理员页面用:增加商品的类别

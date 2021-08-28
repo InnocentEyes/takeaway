@@ -183,6 +183,11 @@ alter table shipaddress add foreign key(areaid) references shiparea(id);
 /*根据文档添加区域 分为本地和外地*/
 insert into shiparea(area,cost) values('本地',5),('外地',100);
 
+/*补充数据库缺少的东西*/
+alter table goods add unique key goods(`typeno`);
+alter table goods add foreign key goods(`typeno`) references goodstype(`no`);
+alter table goodstype add unique key goodstype(`no`);
+
 
 
 

@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.Goods;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  * @author qzlzzz
  * 商品接口
  */
+@Mapper
 public interface GoodsDao {
     /**
      * 管理员用:增加商品

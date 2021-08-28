@@ -1,0 +1,81 @@
+package com.takeaway.service.Impl;
+
+import com.takeaway.exception.NoAsGoodsException;
+import com.takeaway.mapper.GoodsDao;
+import com.takeaway.mapper.MemberMapper;
+import com.takeaway.mapper.OrderDao;
+import com.takeaway.mapper.OrderDetailDao;
+import com.takeaway.pojo.Goods;
+import com.takeaway.pojo.OrderDetail;
+import com.takeaway.pojo.Orders;
+import com.takeaway.service.OrderDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class OrderDetailServiceImpl implements OrderDetailService {
+
+    @Autowired
+    private OrderDetailDao orderDetailDao;
+
+    @Autowired
+    private GoodsDao goodsDao;
+
+    @Autowired
+    private OrderDao orderDao;
+
+    @Autowired
+    private MemberMapper memberMapper;
+
+    @Override
+    public boolean addOrderDetail(OrderDetail orderDetail) throws NoAsGoodsException {
+        boolean flag = false;
+        Goods goods = null;
+
+        if (orderDetailDao != null && goodsDao != null){
+            if (goodsDao.findGoodsByNo(orderDetail.getGoodsNo()) == null){
+                throw new NoAsGoodsException("没有该商品!");
+            }
+            if (goodsDao.findGoodsByNo(orderDetail.getGoodsNo()) != null){
+                goods = goodsDao.findGoodsByNo(orderDetail.getGoodsNo());
+                Float memberPrice = goods.getDiscount() * goods.getPrice();
+                orderDetail.setMemberPrice(memberPrice);
+                Float allPrice = orderDetail.getQty() * memberPrice;
+                orderDetail.setAllPrice(allPrice);
+                flag = orderDetailDao.addOrderDetail(orderDetail);
+            }
+        }
+        return flag;
+    }
+
+    @Override
+    public OrderDetail findOrderDetailByGoodsNo(String goodNo) throws NoAsGoodsException {
+        OrderDetail orderDetail = null;
+        if (orderDetailDao != null && goodsDao != null){
+            if (goodsDao.findGoodsByNo(goodNo) == null){
+                throw new NoAsGoodsException("没有该商品!");
+            }
+            if (goodsDao.findGoodsByNo(goodNo) != null){
+                orderDetail = orderDetailDao.findOrderDetailByGoodNo(goodNo);
+            }
+        }
+        return orderDetail;
+    }
+
+    @Override
+    public List<OrderDetail> findOrderDetailByOrderNo(String order_no,Integer member_id) {
+        List<OrderDetail> orderDetailList = null;
+        if (orderDetailDao != null && memberMapper != null && orderDao != null){
+            List<Orders> list = orderDao.findMemberOrder(member_id);
+            for (Orders orders : list) {
+                if (orders.getName() == order_no){
+                    orderDetailList = orderDetailDao.findOrderDetailByOrderNo(order_no);
+                    break;
+                }
+            }
+        }
+        return orderDetailList;
+    }
+}

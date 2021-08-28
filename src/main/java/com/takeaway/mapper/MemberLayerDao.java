@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.MemberLayer;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  * @author qzlzzz
  * 会员等级操作接口
  */
+@Mapper
 public interface MemberLayerDao {
     /**
      * 添加用户的会员等级 (在用户注册时用)

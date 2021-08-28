@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.takeaway.mapper.OrderDetailDao">
+    <insert id="addOrderDetail">
+        insert into orderdetail(goodno,goodsname,price,discount,memberprice,qty,allprice)
+        values (#{goodsNo},#{goodsName},#{price},#{discount},#{memberPrice},#{qty},#{allPrice})
+    </insert>
+
+    <update id="updateOrderNo">
+        update orderdetail set orderno = #{orderNo} where goodno = #{goodNo}
+    </update>
+
+    <resultMap id="orderDetail_sql" type="com.takeaway.pojo.OrderDetail">
+        <id column="id" property="id"/>
+        <id column="goodno" property="goodsNo"/>
+        <id column="goodsname" property="goodsName"/>
+        <id column="orderno" property="orderNo"/>
+        <id column="price" property="price"/>
+        <id column="discount" property="discount"/>
+        <id column="memberprice" property="memberPrice"/>
+        <id column="qty" property="qty"/>
+        <id column="allprice" property="allPrice"/>
+    </resultMap>
+    <select id="findOrderDetailByGoodNo" resultMap="orderDetail_sql">
+        select id,goodno,goodsname,orderno,price,discount,memberprice,qty,allprice from orderdetail
+        where goodno = #{goodNo}
+    </select>
+
+    <select id="findOrderDetailByOrderNo" resultMap="orderDetail_sql">
+        select id,goodno,goodsname,orderno,price,discount,memberprice,qty,allprice from orderdetail
+        where orderno = #{orderNo}
+    </select>
+
+</mapper>

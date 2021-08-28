@@ -1,14 +1,15 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.Orders;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.aspectj.weaver.ast.Or;
 
 import java.util.List;
 
 /**
  * @author qzlzzz
  */
+@Mapper
 public interface OrderDao {
     /**
      * 增加订单

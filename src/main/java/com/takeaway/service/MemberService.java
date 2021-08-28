@@ -24,16 +24,16 @@ public interface MemberService {
 
     /**
      * 重置密码建议用此方法 效率高
-     * @param user_nick
-     * @param user_pwd
+     * @param user_nick 用户的昵称
+     * @param user_pwd 用户的密码
      * @return
      */
     boolean resetPassword(String user_nick,String user_pwd,String resetPassword);
 
     /**
      * 直接修改 不判断用户原先密码是否正确 不建议使用
-     * @param user_nick
-     * @param user_pwd
+     * @param user_nick 用户的昵称
+     * @param user_pwd 用户的密码
      * @return
      */
     @Deprecated
@@ -41,15 +41,15 @@ public interface MemberService {
 
     /**
      * 注销用户 用户自行注销时 应该输入账户和密码
-     * @param user_nick
-     * @param user_pwd
+     * @param user_nick 用户的昵称
+     * @param user_pwd 用户的密码
      * @return
      */
     boolean deleteMember(String user_nick,String user_pwd);
 
     /**
      * 不建议使用该方法 管理员页面注销用户
-     * @param user_nick
+     * @param user_nick 用户的昵称
      * @return
      */
     @Deprecated
@@ -57,8 +57,8 @@ public interface MemberService {
 
     /**
      * 用来登录的真正方法
-     * @param user_nick
-     * @param user_pwd
+     * @param user_nick 用户的昵称
+     * @param user_pwd 用户的密码
      * @return
      */
     Member login(String user_nick,String user_pwd);

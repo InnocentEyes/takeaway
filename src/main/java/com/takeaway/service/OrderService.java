@@ -1,5 +1,6 @@
 package com.takeaway.service;
 
+import com.takeaway.exception.NoAsShipAdressException;
 import com.takeaway.pojo.OrderDetail;
 import com.takeaway.pojo.Orders;
 
@@ -18,7 +19,7 @@ public interface OrderService {
      * @param size 一页中有多少行数据
      * @return
      */
-    List<Orders> findMemberAllOrder(Integer member_id,Integer page,Integer size);
+    List<Orders> findMemberAllOrder(Integer member_id,Integer page,Integer size) throws NoAsShipAdressException;
 
     /**
      * 根据订单的id查出所有的细节
@@ -33,5 +34,13 @@ public interface OrderService {
      * @param member_id:用户的id
      * @return 一组集合
      */
-    List<Orders> findMemberOrderCredit(Integer member_id);
+    List<Orders> findMemberOrderCredit(Integer member_id) throws NoAsShipAdressException;
+
+    /**
+     * 增加订单 此方法在点击购买的时候，或者点击加入购物车的时候调用
+     * @param goodNo 商品的代码
+     * @param orders
+     * @return
+     */
+    boolean addOrder(String goodNo,Orders orders);
 }

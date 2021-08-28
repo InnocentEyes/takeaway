@@ -21,15 +21,16 @@ public interface GoodsCommentService {
 
     /**
      * 查询商品的评论
-     * @param page
-     * @param size
+     * @param page 第几页
+     * @param size 一页中有多少数据
+     * @param goodId 商品的代码 与 参数goodNo一样
      * @return
      */
     List<GoodsComment> findAllComments(String goodId,Integer page,Integer size) throws PageEnoughException, NoAsGoodsException;
 
     /**
      * 根据商品的代码查找该商品的评论的数量 好做前端和后端的分页
-     * @param goodId
+     * @param goodId 商品的代码 与 参数goodNo一样
      * @return
      */
     Integer findAllCommentBiGoodsId(String goodId);

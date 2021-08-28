@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.Collect;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * @author qzlzzz
  */
+@Mapper
 public interface CollectDao {
     /**
      * 在商品页面点击收藏 调用该方法

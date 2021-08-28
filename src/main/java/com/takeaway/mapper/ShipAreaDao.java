@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.ShipArea;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  * @author qzlzzz
  *  送货区域接口
  */
+@Mapper
 public interface ShipAreaDao {
     /**
      * 管理员操作:增加送货的区域

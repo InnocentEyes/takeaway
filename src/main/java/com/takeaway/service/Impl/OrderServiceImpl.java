@@ -1,11 +1,11 @@
 package com.takeaway.service.Impl;
 
 import com.github.pagehelper.PageHelper;
-import com.takeaway.mapper.MemberMapper;
-import com.takeaway.mapper.OrderDao;
-import com.takeaway.mapper.ShipAddressDao;
+import com.takeaway.exception.NoAsShipAdressException;
+import com.takeaway.mapper.*;
 import com.takeaway.pojo.Orders;
 import com.takeaway.service.OrderService;
+import com.takeaway.util.OrderNoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -24,20 +24,27 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao;
 
     @Autowired
+    private GoodsDao goodsDao;
+
+    @Autowired
+    private OrderDetailDao orderDetailDao;
+
+    @Autowired
     private MemberMapper memberMapper;
 
     @Autowired
     private ShipAddressDao shipAddressDao;
 
     @Override
-    public List<Orders> findMemberAllOrder(Integer member_id,Integer page,Integer size) {
+    public List<Orders> findMemberAllOrder(Integer member_id,Integer page,Integer size) throws NoAsShipAdressException {
         List<Orders> ordersList = null;
         if (orderDao != null && memberMapper != null && shipAddressDao != null){
             if (memberMapper.findById(member_id) == null){
-                return ordersList;//这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
+                return ordersList;//跳转到注册页面
+                //这里需要修改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
-                return ordersList;//这里return 空 需要在控制器判断空后跳转到地址薄添加页面
+                return ordersList;//判断地址为空，跳转到用户地址bo
             }
             if (orderDao.findMemberOrder(member_id) != null) {
                 int count = orderDao.findMemberOrderCount(member_id);
@@ -48,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
                 }
             }
         }
-        return ordersList;
+        return ordersList;//null 跳转注册页面
     }
 
     @Override
@@ -57,7 +64,7 @@ public class OrderServiceImpl implements OrderService {
 
         if (orderDao != null){
             if (orderDao.findOrderById(order_id) == null){
-                return order;////这里return 空 需要在控制器判断空后跳转到商城首页
+                return order;//这里return 空 需要在控制器判断空后跳转到商城首页
             }
             order = orderDao.findOrderById(order_id);
         }
@@ -65,21 +72,45 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Orders> findMemberOrderCredit(Integer member_id) {
+    public List<Orders> findMemberOrderCredit(Integer member_id) throws NoAsShipAdressException {
         List<Orders> ordersList = null;
         if (orderDao != null && memberMapper != null && shipAddressDao != null){
             if (memberMapper.findById(member_id) == null){
-                return ordersList;
+                return ordersList;//这里需要修改
                 //这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
-                return ordersList;//这里return 空 需要在控制器判断空后跳转到地址薄添加页面
-                //这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
+                return ordersList;//判断地址为空，跳转到用户地址bo
             }
             if (orderDao.findMemberOrderCredit(member_id) != null){
-                ordersList = findMemberOrderCredit(member_id);
+                ordersList = orderDao.findMemberOrderCredit(member_id);
             }
         }
         return ordersList;
+    }
+
+    @Override
+    public boolean addOrder(String goodNo, Orders orders) {
+        boolean flag = false;
+        if (orderDao != null && orderDetailDao != null && memberMapper != null){
+            if (memberMapper.findById(orders.getType()) == null){
+                return flag;
+            }
+            if (shipAddressDao.findShipAddressById(orders.getType()) == null){
+                return flag;
+            }
+            if(goodsDao.findGoodsByNo(goodNo) != null){
+                String orderNo = OrderNoUtil.generateUID();
+                orders.setName(orderNo);
+                flag = orderDao.addOrder(orders);
+                if (flag = true){
+                    flag = false;
+                    if (orderDetailDao.findOrderDetailByGoodNo(goodNo) != null){
+                        flag = orderDetailDao.updateOrderNo(goodNo, orderNo);
+                    }
+                }
+            }
+        }
+        return flag;
     }
 }

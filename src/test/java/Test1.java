@@ -1,4 +1,5 @@
 import com.takeaway.util.BASE64;
+import com.takeaway.util.OrderNoUtil;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -55,5 +56,11 @@ public class Test1 {
         System.out.println(encode);
         String decode = BASE64.decode(encode);
         System.out.println(decode);
+    }
+    //随机生成订单号
+    @Test
+    public void test5(){
+        String res = OrderNoUtil.generateUID();
+        System.out.println(res);
     }
 }

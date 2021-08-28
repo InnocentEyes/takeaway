@@ -11,28 +11,28 @@ import java.util.List;
 public interface ShipAdressService {
     /**
      * 用户操作:增加用户的送货地址
-     * @param shipAddress
+     * @param shipAddress 地址
      * @return
      */
     ShipAddress addShipAdress(ShipAddress shipAddress);
 
     /**
      * 用户操作:更新地址信息
-     * @param shipAddress
+     * @param shipAddress 地址
      * @return
      */
     boolean updateShipAdress(ShipAddress shipAddress);
 
     /**
      * 这里的Id不是主键ID 是用户Id
-     * @param member_id
+     * @param member_id 用户的id
      * @return
      */
     List<ShipAddress> findAllShipAdressById(Integer member_id);
 
     /**
      * 删除用户单条的送货地址
-     * @param member_id
+     * @param member_id 用户的id
      * @param id
      * @return
      */
@@ -40,7 +40,7 @@ public interface ShipAdressService {
 
     /**
      * 根据用户ID删除所有用户的送货地址
-     * @param member_id
+     * @param member_id 用户的id
      * @return
      */
     boolean deleteAllShipAdress(Integer member_id);

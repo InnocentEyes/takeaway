@@ -1,6 +1,7 @@
 package com.takeaway.mapper;
 
 import com.takeaway.pojo.ShipAddress;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * @author qzlzzz
  */
+@Mapper
 public interface ShipAddressDao {
     /**
      * 用户操作:增加用户的送货地址
