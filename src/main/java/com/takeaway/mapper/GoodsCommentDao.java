@@ -29,6 +29,13 @@ public interface GoodsCommentDao {
     List<GoodsComment> findAllGoodsComment();
 
     /**
+     * 根据商品的代码 查询该商品的所有评论
+     * @param goodId
+     * @return
+     */
+    List<GoodsComment> findGoodsCommentByGoodsId(@Param("goodId") String goodId);
+
+    /**
      * 根据商品的类别查找具体的数量
      * @param no
      * @return

@@ -62,6 +62,9 @@ public class MemberController {
         }else {
             members = memberService.register(member);
         }
+        /*
+            session的默认为30分钟
+         */
         if (members != null){
             session.setAttribute("userId",members.getId());
             session.setAttribute("userLayer",members.getLayerid());

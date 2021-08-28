@@ -59,5 +59,12 @@ public interface GoodsDao {
      */
     int findGoodsCount(@Param("typeno") String type);
 
+    /**
+     * 根据商品的代码查找商品
+     * @param no
+     * @return
+     */
+    Goods findGoodsByNo(@Param("no") String no);
+
 
 }

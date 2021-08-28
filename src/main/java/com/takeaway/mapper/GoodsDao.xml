@@ -68,4 +68,8 @@
     <select id="findGoodsCount" resultType="int">
         select count (*) from goods where typeno = #{typeno}
     </select>
+
+    <select id="findGoodsByNo" resultMap="sql">
+        select * from goods where no = #{no}
+    </select>
 </mapper>

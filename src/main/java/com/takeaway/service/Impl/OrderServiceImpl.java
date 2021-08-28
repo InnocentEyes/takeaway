@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
         List<Orders> ordersList = null;
         if (orderDao != null && memberMapper != null && shipAddressDao != null){
             if (memberMapper.findById(member_id) == null){
-                return ordersList;//这里为空 就是开发者或者页面的问题
+                return ordersList;//这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
                 return ordersList;//这里return 空 需要在控制器判断空后跳转到地址薄添加页面
@@ -69,10 +69,12 @@ public class OrderServiceImpl implements OrderService {
         List<Orders> ordersList = null;
         if (orderDao != null && memberMapper != null && shipAddressDao != null){
             if (memberMapper.findById(member_id) == null){
-                return ordersList;//这里为空 就是开发者或者页面的问题
+                return ordersList;
+                //这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
                 return ordersList;//这里return 空 需要在控制器判断空后跳转到地址薄添加页面
+                //这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
             }
             if (orderDao.findMemberOrderCredit(member_id) != null){
                 ordersList = findMemberOrderCredit(member_id);

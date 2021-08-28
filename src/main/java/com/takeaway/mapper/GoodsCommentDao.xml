@@ -30,4 +30,8 @@
         </where>
     </select>
 
+    <select id="findGoodsCommentByGoodsId" resultMap="goodsComment_sql">
+        select id,memberid,goodsid,pubtime,score,desc from goodscomment where goodsid = #{goodsid}
+    </select>
+
 </mapper>
