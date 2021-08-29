@@ -11,22 +11,28 @@ import com.takeaway.pojo.Orders;
 import com.takeaway.service.OrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional(isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED,rollbackFor = {
+        NullPointerException.class
+})
 public class OrderDetailServiceImpl implements OrderDetailService {
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private OrderDetailDao orderDetailDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private GoodsDao goodsDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private OrderDao orderDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private MemberMapper memberMapper;
 
     @Override

@@ -23,9 +23,9 @@ import java.util.List;
 @Service
 public class ShipAdressServiceImpl implements ShipAdressService {
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private MemberMapper memberMapper;
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private ShipAddressDao shipAdressDao;
 
     @Override

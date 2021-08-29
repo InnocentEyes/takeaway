@@ -33,6 +33,6 @@ public interface GoodsCommentService {
      * @param goodId 商品的代码 与 参数goodNo一样
      * @return
      */
-    Integer findAllCommentBiGoodsId(String goodId);
+    Integer findAllCommentByGoodsId(String goodId);
 
 }

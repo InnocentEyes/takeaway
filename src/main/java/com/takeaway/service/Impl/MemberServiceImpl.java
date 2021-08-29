@@ -19,7 +19,7 @@ import java.util.Map;
 @Service
 public class MemberServiceImpl implements MemberService {
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     MemberMapper memberMapper;
 
 

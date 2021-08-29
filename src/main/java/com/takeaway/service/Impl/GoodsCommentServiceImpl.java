@@ -22,13 +22,13 @@ import java.util.List;
 })
 public class GoodsCommentServiceImpl implements GoodsCommentService {
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private GoodsCommentDao goodsCommentDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private MemberMapper memberMapper;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private GoodsDao goodsDao;
 
     @Override
@@ -54,9 +54,10 @@ public class GoodsCommentServiceImpl implements GoodsCommentService {
             if (goodsDao.findGoodsByNo(goodId) == null){
                 throw new NoAsGoodsException("没有此商品!");
             }
-            Integer amount = findAllCommentBiGoodsId(goodId) / size +1;
+            Integer amount = goodsCommentDao.findGoodsCommentCountByNo(goodId) / size +1;
             if (page <= amount){
                 PageHelper.startPage(page,size);
+                //这里不用findAllCommentByGoodsId是为了效率
                 goodsCommentList = goodsCommentDao.findGoodsCommentByGoodsId(goodId);
             }else {
                 throw new PageEnoughException("页面超出异常!");
@@ -67,10 +68,10 @@ public class GoodsCommentServiceImpl implements GoodsCommentService {
     }
 
     @Override
-    public Integer findAllCommentBiGoodsId(String goodId) {
-        Integer size = 1;//页面默认是1
+    public Integer findAllCommentByGoodsId(String goodId) {
+        Integer size = 0;
         if (goodsCommentDao != null){
-            size = goodsCommentDao.findGoodsCommentByNo(goodId);
+            size = goodsCommentDao.findGoodsCommentCountByNo(goodId);
         }
         return size;
     }

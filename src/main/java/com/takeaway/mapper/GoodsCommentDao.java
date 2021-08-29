@@ -42,5 +42,5 @@ public interface GoodsCommentDao {
      * @param no
      * @return
      */
-    int findGoodsCommentByNo(@Param("no") String no);
+    int findGoodsCommentCountByNo(@Param("no") String no);
 }

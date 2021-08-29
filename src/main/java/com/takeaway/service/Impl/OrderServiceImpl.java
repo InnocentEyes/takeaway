@@ -20,19 +20,19 @@ import java.util.List;
 })
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private OrderDao orderDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private GoodsDao goodsDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private OrderDetailDao orderDetailDao;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private MemberMapper memberMapper;
 
-    @Autowired
+    @Autowired//这里可以使用@Resource
     private ShipAddressDao shipAddressDao;
 
     @Override
