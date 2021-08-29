@@ -35,9 +35,23 @@ public interface OrderDetailDao {
     OrderDetail findOrderDetailByGoodNo(@Param("goodNo") String goodNo);
 
     /**
+     * 根据商品清单的ID查询对应的商品清单
+     * @param orderDetail_id
+     * @return
+     */
+    OrderDetail findOrderDetailBYOrderDetailId(@Param("id") Integer orderDetail_id);
+
+    /**
      * 根据订单的编号来查询商品清单
      * @param order_no
      * @return
      */
     List<OrderDetail> findOrderDetailByOrderNo(@Param("orderNo") String order_no);
+
+    /**
+     * 根据商品清单的ID删除商品清单
+     * @param id
+     * @return
+     */
+    boolean deleteOrderDetailById(@Param("id") Integer id);
 }

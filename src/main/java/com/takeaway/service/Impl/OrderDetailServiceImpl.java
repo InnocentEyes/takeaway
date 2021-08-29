@@ -51,6 +51,16 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     @Override
+    public OrderDetail addCart(OrderDetail orderDetail) throws NoAsGoodsException {
+        OrderDetail orderDetail1 = null;
+        boolean flag = addOrderDetail(orderDetail);
+        if (flag = true){
+            orderDetail = findOrderDetailByGoodsNo(orderDetail.getGoodsNo());
+        }
+        return orderDetail;
+    }
+
+    @Override
     public OrderDetail findOrderDetailByGoodsNo(String goodNo) throws NoAsGoodsException {
         OrderDetail orderDetail = null;
         if (orderDetailDao != null && goodsDao != null){
@@ -73,6 +83,31 @@ public class OrderDetailServiceImpl implements OrderDetailService {
                 if (orders.getName() == order_no){
                     orderDetailList = orderDetailDao.findOrderDetailByOrderNo(order_no);
                     break;
+                }
+            }
+        }
+        return orderDetailList;
+    }
+
+    @Override
+    public Boolean deleteOrderDetail(Integer orderDetail_id) {
+        boolean flag = false;
+        if (orderDetailDao != null){
+            if (orderDetailDao.findOrderDetailBYOrderDetailId(orderDetail_id).getId() == orderDetail_id){
+                flag = orderDetailDao.deleteOrderDetailById(orderDetail_id);
+            }
+        }
+        return flag;
+    }
+
+    @Override
+    public List<OrderDetail> findOrderDetailByOrderDetailId(Integer[] orderDetail_ids) {
+        List<OrderDetail> orderDetailList = null;
+        if (orderDetailDao != null){
+            for (Integer orderDetail_id : orderDetail_ids) {
+                if (orderDetailDao.findOrderDetailBYOrderDetailId(orderDetail_id).getId() == orderDetail_id){
+                    OrderDetail orderDetail = orderDetailDao.findOrderDetailBYOrderDetailId(orderDetail_id);
+                    orderDetailList.add(orderDetail);
                 }
             }
         }

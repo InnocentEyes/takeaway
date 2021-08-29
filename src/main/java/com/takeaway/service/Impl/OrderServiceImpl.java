@@ -90,7 +90,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean addOrder(String goodNo, Orders orders) {
+    public boolean addOrder(String[] goodNo, Orders orders) {
         boolean flag = false;
         if (orderDao != null && orderDetailDao != null && memberMapper != null){
             if (memberMapper.findById(orders.getType()) == null){
@@ -99,14 +99,14 @@ public class OrderServiceImpl implements OrderService {
             if (shipAddressDao.findShipAddressById(orders.getType()) == null){
                 return flag;
             }
-            if(goodsDao.findGoodsByNo(goodNo) != null){
-                String orderNo = OrderNoUtil.generateUID();
-                orders.setName(orderNo);
-                flag = orderDao.addOrder(orders);
-                if (flag = true){
-                    flag = false;
-                    if (orderDetailDao.findOrderDetailByGoodNo(goodNo) != null){
-                        flag = orderDetailDao.updateOrderNo(goodNo, orderNo);
+            String orderNo = OrderNoUtil.generateUID();
+            orders.setName(orderNo);
+            flag = orderDao.addOrder(orders);
+            if (flag = true){
+                flag = false;
+                for (String goods : goodNo) {
+                    if (goodsDao.findGoodsByNo(goods) != null) {
+                        flag = orderDetailDao.updateOrderNo(goods,orderNo);
                     }
                 }
             }

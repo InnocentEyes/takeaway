@@ -1,10 +1,8 @@
 package com.takeaway.service;
 
 import com.takeaway.exception.NoAsShipAdressException;
-import com.takeaway.pojo.OrderDetail;
 import com.takeaway.pojo.Orders;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,10 +35,10 @@ public interface OrderService {
     List<Orders> findMemberOrderCredit(Integer member_id) throws NoAsShipAdressException;
 
     /**
-     * 增加订单 此方法在点击购买的时候，或者点击加入购物车的时候调用
+     * 增加订单 此方法在点击购买的时候 结账时使用
      * @param goodNo 商品的代码
      * @param orders
      * @return
      */
-    boolean addOrder(String goodNo,Orders orders);
+    boolean addOrder(String[] goodNo,Orders orders);
 }

@@ -28,9 +28,18 @@
         where goodno = #{goodNo}
     </select>
 
+    <select id="findOrderDetailBYOrderDetailId" resultMap="orderDetail_sql">
+        select id,goodno,goodsname,orderno,price,discount,memberprice,qty,allprice from orderdetail
+        where id = #{id}
+    </select>
+
     <select id="findOrderDetailByOrderNo" resultMap="orderDetail_sql">
         select id,goodno,goodsname,orderno,price,discount,memberprice,qty,allprice from orderdetail
         where orderno = #{orderNo}
     </select>
+
+    <delete id="deleteOrderDetailById">
+        delete from orderdetail where id = #{id}
+    </delete>
 
 </mapper>
