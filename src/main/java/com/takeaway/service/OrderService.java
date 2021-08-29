@@ -40,5 +40,5 @@ public interface OrderService {
      * @param orders
      * @return
      */
-    boolean addOrder(String[] goodNo,Orders orders);
+    boolean addOrder(String[] goodNo,Orders orders) throws NoAsShipAdressException;
 }

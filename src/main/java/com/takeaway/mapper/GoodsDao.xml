@@ -65,6 +65,11 @@
     </select>
 
     <!--建议是将*写成具体东西 作者偷懒 不写-->
+    <select id="findGoodsByType" resultMap="sql">
+        select * from goods where typeno = #{typeno}
+    </select>
+
+    <!--建议是将*写成具体东西 作者偷懒 不写-->
     <select id="findGoodsCount" resultType="int">
         select count (*) from goods where typeno = #{typeno}
     </select>

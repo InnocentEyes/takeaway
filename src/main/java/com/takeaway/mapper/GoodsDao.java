@@ -53,6 +53,13 @@ public interface GoodsDao {
     List<Goods> findAllGoods();
 
     /**
+     * 根据商品的类型查询符合该类型的商品
+     * @param type 商品的类型
+     * @return
+     */
+    List<Goods> findGoodsByType(@Param("typeno") String type);
+
+    /**
      * 根据商品的类别 查询商品属于该类别的数量
      * 此方法理解有所不同 可以修改
      * 对应数据访问类的GoodsDao中的findCount()方法

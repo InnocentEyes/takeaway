@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
                 //这里需要修改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
-                return ordersList;//判断地址为空，跳转到用户地址bo
+                throw new NoAsShipAdressException("该用户没有地址!");
             }
             if (orderDao.findMemberOrder(member_id) != null) {
                 int count = orderDao.findMemberOrderCount(member_id);
@@ -80,7 +80,7 @@ public class OrderServiceImpl implements OrderService {
                 //这边应该换为异常 然后写一个切面类去处理这个异常 比如使用日志记录下来，在调试的时候好更改
             }
             if (shipAddressDao.findShipAddressById(member_id) == null){
-                return ordersList;//判断地址为空，跳转到用户地址bo
+                throw new NoAsShipAdressException("该用户没有地址!");
             }
             if (orderDao.findMemberOrderCredit(member_id) != null){
                 ordersList = orderDao.findMemberOrderCredit(member_id);
@@ -90,14 +90,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean addOrder(String[] goodNo, Orders orders) {
+    public boolean addOrder(String[] goodNo, Orders orders) throws NoAsShipAdressException {
         boolean flag = false;
         if (orderDao != null && orderDetailDao != null && memberMapper != null){
             if (memberMapper.findById(orders.getType()) == null){
                 return flag;
             }
             if (shipAddressDao.findShipAddressById(orders.getType()) == null){
-                return flag;
+                throw new NoAsShipAdressException("该用户没有地址!");
             }
             String orderNo = OrderNoUtil.generateUID();
             orders.setName(orderNo);
