@@ -2,7 +2,6 @@ package com.takeaway.controller;
 
 import com.takeaway.exception.NotEnoughtException;
 import com.takeaway.pojo.Member;
-import com.takeaway.service.CollectService;
 import com.takeaway.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +61,7 @@ public class MemberController {
             throw new NotEnoughtException("用户信息缺失!");
         }else {
             members = memberService.register(member);
+
         }
         /*
             session的默认为30分钟
