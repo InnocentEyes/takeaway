@@ -6,7 +6,7 @@
 
   <!--注意在用户初次注册时 默认mincredit creditscale赋值为0-->
   <insert id="addMemberLayer">
-    insert into memberlayer(layer,mincredit,creditscale) values (#{layer},0,0)
+    insert into memberlayer(layer,mincredit,creditscale) values ('普通会员',0,1.0)
   </insert>
 
   <update id="updateMemberLayer">
