@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -18,7 +17,7 @@ import java.util.Map;
  */
 
 @Controller
-public class MemberController {
+public class IndexController {
 
     @Autowired
     private MemberService memberService;
@@ -28,7 +27,6 @@ public class MemberController {
      * @param member 用户的ID 密码
      * @return 登录成功跳转到首页 不成功则返回首页
      */
-    @ResponseBody
     @PostMapping(value = "/login",produces = "text/html;charset=utf-8")
     public String Login(Member member, HttpSession session){
         String msg = "index";
@@ -39,10 +37,15 @@ public class MemberController {
             throw new NotEnoughtException("用户未输入密码");
         }
 
-        Member login = memberService.login(member.getNick(), member.getPassword());
-        if (login != null){
-            session.setAttribute("userId",login.getId());
-            session.setAttribute("userLayer",login.getLayerid());
+        Member user = memberService.login(member.getNick(), member.getPassword());
+        if (user != null){
+            /*
+                session默认为30分钟
+             */
+            session.setAttribute("userId",user.getId());
+            session.setAttribute("userLayerId",user.getLayerid());
+            session.setAttribute("userNick",user.getNick());
+            session.setAttribute("userCredit",user.getCredit());
             return "first";
         }
         return msg;
@@ -55,20 +58,22 @@ public class MemberController {
      */
     @PostMapping (value = "/register")
     public String Register(@RequestParam Map<String,String> member,HttpSession session){
-        Member members = null;
+        Member user = null;
         String msg = "index";
         if (member.get("nick").equals("") || member.get("email").equals("") || member.get("password").equals("")){
             throw new NotEnoughtException("用户信息缺失!");
         }else {
-            members = memberService.register(member);
+            user = memberService.register(member);
 
         }
         /*
             session的默认为30分钟
          */
-        if (members != null){
-            session.setAttribute("userId",members.getId());
-            session.setAttribute("userLayer",members.getLayerid());
+        if (user != null){
+            session.setAttribute("userId",user.getId());
+            session.setAttribute("userLayerId",user.getLayerid());
+            session.setAttribute("userNick",user.getNick());
+            session.setAttribute("userCredit",user.getCredit());
             msg = "first";
         }
         return msg;

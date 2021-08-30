@@ -188,6 +188,11 @@ alter table goods add unique key goods(`typeno`);
 alter table goods add foreign key goods(`typeno`) references goodstype(`no`);
 alter table goodstype add unique key goodstype(`no`);
 
+/**
+  会员的等级 因此不用写MemberLayerService类来添加或修改 这是固定的
+ */
+insert into memberlayer(layer,mincredit,creditscale) values('普通会员',0,1.0),('白银会员',3000,1.2),('黄金会员',8000,1.3),('白金会员',15000,1.4);
+
 
 
 

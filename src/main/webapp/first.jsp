@@ -15,13 +15,25 @@
     <script src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/Filickity.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/banner.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            $.ajax({
+                url:"${pageContext.request.contextPath}/loginAndRegister",
+                dataType:"text",
+                type:"get",
+                success:function (res){
+                    $("#login_register").html(res);
+                }
+            })
+        })
+    </script>
 </head>
 <body>
 <div id="container">
     <div id="top"></div>
     <div id="header">
         <div class="header_left_box">
-            <a href="javascript:void(0)">登录/注册</a>
+            <a id="login_register">登录/注册</a>
         </div>
         <div class="header_right_box_one">
             <a href="javascript:void(0)">我的账户</a>

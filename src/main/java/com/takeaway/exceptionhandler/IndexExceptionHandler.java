@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
-public class MemberExceptionHandler {
+public class IndexExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(value = NotEnoughtException.class)

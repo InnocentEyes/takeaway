@@ -27,7 +27,7 @@
                     <input id="register_userEmail"  name="email" type="email" placeholder="Email">
                     <input id="register_userPassword"  name="password" type="password" placeholder="Password">
                     <input type="password" placeholder="Confirm Password">
-                    <button class="button" id="register">Create Account</button>
+                    <button class="button sumbit" id="register">Create Account</button>
                 </form>
             </div>
 
@@ -40,7 +40,7 @@
                     <div class="checkbox">
                         <input type="checkbox" id="remember" /><label for="remember">Remember me</label>
                     </div>
-                    <button class="buttom" id="sign">Login</button>
+                    <button class="buttom sumbit" id="sign">Login</button>
                 </form>
             </div>
         </div>
@@ -66,6 +66,5 @@
 <!-- partial -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/index.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/ajax/Login.js"></script>
 </body>
 </html>
