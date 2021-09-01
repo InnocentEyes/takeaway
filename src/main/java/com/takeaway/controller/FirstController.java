@@ -14,7 +14,8 @@ public class FirstController {
 
     @RequestMapping(value = "/loginAndRegister",produces = "text/html;charset=utf-8")
     public String LoginRegisterController(HttpSession session){
-        String nick = (String) session.getAttribute("userNick");
-        return "欢迎您! "+nick;
+        String msg = "登录/注册";
+        msg= (String) session.getAttribute("userNick");
+        return "欢迎您! "+ msg;
     }
 }

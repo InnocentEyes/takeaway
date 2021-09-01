@@ -53,9 +53,9 @@
     <div id="nav">
         <nav class="navMenu">
             <a href="#">HOME</a>
-            <a id="game_one" href="#">战术游戏</a>
-            <a id="game_two" href="#">RPG游戏</a>
-            <a id="game_three" href="#">竞技游戏</a>
+            <a id="0100" href="#">战术游戏</a>
+            <a id="0200" href="#">RPG游戏</a>
+            <a id="0300" href="#">竞技游戏</a>
             <div class="dot"></div>
         </nav>
     </div>
@@ -190,5 +190,6 @@
             <h6>随便写写</h6>
         </div>
     </div>
+</div>
 </body>
 </html>
