@@ -12,40 +12,10 @@
     <meta charset="utf-8">
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/first.css"/>
-    <script src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
-    <script src="${pageContext.request.contextPath}/static/js/Filickity.js"></script>
-    <script src="${pageContext.request.contextPath}/static/js/banner.js"></script>
-    <script type="text/javascript">
-        $(function (){
-            $.ajax({
-                url:"${pageContext.request.contextPath}/loginAndRegister",
-                dataType:"text",
-                type:"get",
-                success:function (res){
-                    $("#login_register").html(res);
-                }
-            })
-
-            $("#0101").click(function (){
-                var val = $(this).attr("id");
-                $.ajax({
-                    url:"${pageContext.request.contextPath}/findByNo",
-                    type: "get",
-                    contentType:"application/json;charset=utf-8",
-                    dataType: "json",
-                    data:{
-                        typeNo:val
-                    },
-                    success:function (res){
-                        $.each(res,function (index,element){
-                            alert(element.no);
-                        })
-                    }
-                })
-
-            })
-        })
-    </script>
+    <script src="${pageContext.request.contextPath}/static/js/pageJs/jquery-3.6.0.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/pageJs/Filickity.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/pageJs/banner.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/ajax/first.js"></script>
 </head>
 <body>
 <div id="container">
@@ -73,7 +43,7 @@
         <nav class="navMenu">
             <a href="#">HOME</a>
             <a id="0101" href="#">战术游戏</a>
-            <a id="0200" href="#">RPG游戏</a>
+            <a id="0201" href="#">RPG游戏</a>
             <a id="0300" href="#">竞技游戏</a>
             <div class="dot"></div>
         </nav>
@@ -135,25 +105,25 @@
             </div>
             <div class="box_main">
                 <div class="box_right">
-                    <div id="02010001" class="img_1">
-                        <img src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010001.png" >
-                        <p>巫师三</p>
+                    <div id="goods_id_one" class="img_1">
+                        <img id="goods_img_one" src="${pageContext.request.contextPath}/static/css/img/game_img/02010001.png" >
+                        <p id="goods_name_one">巫师三</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div id="02010002" class="img_2">
-                        <img src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010002.png" >
-                        <p>刺客信条奥德赛</p>
+                    <div id="goods_id_two" class="img_2">
+                        <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/02010002.png" >
+                        <p id="goods_name_two">刺客信条奥德赛</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                 </div>
                 <div class="box_left">
-                    <div id="02010003" class="img_1 "><img src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010003.png" ><p>赛博朋克2077</p>
+                    <div id="goods_id_three" class="img_1 "><img id="goods_img_three" src="${pageContext.request.contextPath}/static/css/img/game_img/02010003.png" ><p id="goods_name_three">赛博朋克2077</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div id="02010004" class="img_3"><img src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010004.png" ><p>古墓丽影</p>
+                    <div id="goods_id_four" class="img_3"><img id="goods_img_four" src="${pageContext.request.contextPath}/static/css/img/game_img/02010004.png" ><p id="goods_name_four">古墓丽影</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div id="02010005" class="img_2 "><img src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010005.png" ><p>刺客信条-英灵殿</p>
+                    <div id="goods_id_five" class="img_2 "><img id="goods_img_five" src="${pageContext.request.contextPath}/static/css/img/game_img/02010005.png" ><p id="goods_name_five">刺客信条-英灵殿</p>
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                 </div>

@@ -64,7 +64,7 @@
 </div>
 
 <!-- partial -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
-<script src="${pageContext.request.contextPath}/static/js/index.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pageJs/jquery-3.6.0.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/pageJs/index.js"></script>
 </body>
 </html>

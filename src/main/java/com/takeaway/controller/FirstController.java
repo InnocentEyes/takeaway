@@ -36,7 +36,6 @@ public class FirstController {
         if (typeNo != null){
             goods = goodsService.findGoodsByTypeNo(typeNo);
         }
-        System.out.println(goods);
         return goods;
     }
 }

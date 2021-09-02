@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <title>商品页面</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pageJs/jquery-3.6.0.js"></script>
     <script type="text/javascript">
         $(function(){
             $('#myButton').on('click', function () {
