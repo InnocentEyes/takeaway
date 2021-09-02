@@ -42,9 +42,9 @@
     <div id="nav">
         <nav class="navMenu">
             <a href="#">HOME</a>
-            <a id="0101" href="#">战术游戏</a>
-            <a id="0201" href="#">RPG游戏</a>
-            <a id="0300" href="#">竞技游戏</a>
+            <a id="0101" href="javascript:void(0)">战术游戏</a>
+            <a id="0201" href="javascript:void(0)">RPG游戏</a>
+            <a id="0301" href="javascript:void(0)">竞技游戏</a>
             <div class="dot"></div>
         </nav>
     </div>
@@ -106,24 +106,29 @@
             <div class="box_main">
                 <div class="box_right">
                     <div id="goods_id_one" class="img_1">
-                        <img id="goods_img_one" src="${pageContext.request.contextPath}/static/css/img/game_img/02010001.png" >
-                        <p id="goods_name_one">巫师三</p>
+                        <img id="goods_img_one" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010001.png" >
+                        <h3 id="goods_name_one">巫师三</h3>
+                        <span id="goods_price_one">127</span>元
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                     <div id="goods_id_two" class="img_2">
-                        <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/02010002.png" >
-                        <p id="goods_name_two">刺客信条奥德赛</p>
+                        <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010002.png" >
+                        <h3 id="goods_name_two">刺客信条奥德赛</h3>
+                        <span id="goods_price_two">298</span>元
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                 </div>
                 <div class="box_left">
-                    <div id="goods_id_three" class="img_1 "><img id="goods_img_three" src="${pageContext.request.contextPath}/static/css/img/game_img/02010003.png" ><p id="goods_name_three">赛博朋克2077</p>
+                    <div id="goods_id_three" class="img_1 "><img id="goods_img_three" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010003.png" ><h3 id="goods_name_three">赛博朋克2077</h3>
+                        <span id="goods_price_three">298</span>元
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div id="goods_id_four" class="img_3"><img id="goods_img_four" src="${pageContext.request.contextPath}/static/css/img/game_img/02010004.png" ><p id="goods_name_four">古墓丽影</p>
+                    <div id="goods_id_four" class="img_3"><img id="goods_img_four" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010004.png" ><h3 id="goods_name_four">古墓丽影</h3>
+                        <span id="goods_price_four">242</span>元
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
-                    <div id="goods_id_five" class="img_2 "><img id="goods_img_five" src="${pageContext.request.contextPath}/static/css/img/game_img/02010005.png" ><p id="goods_name_five">刺客信条-英灵殿</p>
+                    <div id="goods_id_five" class="img_2 "><img id="goods_img_five" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010005.png" ><h3 id="goods_name_five">刺客信条-英灵殿</h3>
+                        <span id="goods_price_five">198</span>元
                         <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
                     </div>
                 </div>
