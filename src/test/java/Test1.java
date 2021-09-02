@@ -1,3 +1,4 @@
+import com.takeaway.mapper.GoodsDao;
 import com.takeaway.util.BASE64;
 import com.takeaway.util.OrderNoUtil;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -62,5 +63,13 @@ public class Test1 {
     public void test5(){
         String res = OrderNoUtil.generateUID();
         System.out.println(res);
+    }
+
+    @Test
+    public void test6(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        GoodsDao goodsDao = (GoodsDao) applicationContext.getBean("goodsDao");
+        int goodsCount = goodsDao.findGoodsCount("0101");
+        System.out.println(goodsCount);
     }
 }

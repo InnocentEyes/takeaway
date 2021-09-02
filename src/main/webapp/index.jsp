@@ -48,7 +48,7 @@
         <div class="leftbox">
             <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
             <p class="desc">Pick your perfect <span>bouquet</span></p>
-            <img class="flower smaller" src="${pageContext.request.contextPath}/static/css/img/webp.webp" />
+            <img class="flower smaller" src="${pageContext.request.contextPath}/static/css/img/other/webp.webp" />
             <p class="account">Have an account?</p>
             <button class="button" id="signin">Login</button>
         </div>
@@ -56,7 +56,7 @@
         <div class="rightbox">
             <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
             <p class="desc">Pick your perfect <span>bouquet</span></p>
-            <img class="flower" src="${pageContext.request.contextPath}/static/css/img/webp.webp"/>
+            <img class="flower" src="${pageContext.request.contextPath}/static/css/img/other/webp.webp"/>
             <p class="account">Don't have an account?</p>
             <button class="button" id="signup">Sign Up</button>
         </div>

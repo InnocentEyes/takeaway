@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.takeaway.mapper.GoodsDao">
     <insert id="addGood">
-        insert into goods(no,name,typeno,desc,img,price,qty,discount)
+        insert into goods(`no`,`name`,typeno,`desc`,img,price,qty,discount)
         values (#{no},#{name},#{typeNo},#{desc},#{img},#{price},#{discount})
     </insert>
 
@@ -12,16 +12,16 @@
         update goods
         <set>
             <if test="no != null">
-                no = #{no},
+                `no` = #{no},
             </if>
             <if test="name != null">
-                name = #{name},
+                `name` = #{name},
             </if>
             <if test="typeNo != null">
                 typeno = #{typeNo},
             </if>
             <if test="desc != null">
-                desc = #{desc},
+                `desc` = #{desc},
             </if>
             <if test="img != null">
                 img = #{img},
@@ -70,11 +70,11 @@
     </select>
 
     <!--建议是将*写成具体东西 作者偷懒 不写-->
-    <select id="findGoodsCount" resultType="int">
-        select count (*) from goods where typeno = #{typeno}
+    <select id="findGoodsCount" resultType="java.lang.Integer">
+        select count(*) from goods where typeno = #{typeno}
     </select>
 
     <select id="findGoodsByNo" resultMap="sql">
-        select * from goods where no = #{no}
+        select * from goods where `no` = #{no}
     </select>
 </mapper>

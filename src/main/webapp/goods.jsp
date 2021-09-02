@@ -66,7 +66,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 first">
-            <img src="${pageContext.request.contextPath}/static/css/img/9XpPN9Je3m.png" >
+            <img src="${pageContext.request.contextPath}/static/css/img/other/9XpPN9Je3m.png" >
         </div>
     </div>
     <div class="summary-line"></div>
@@ -111,7 +111,7 @@
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="goods_img col-xs-8 col-sm-8 col-md-8 col-lg-8" >
-                <img src="${pageContext.request.contextPath}/static/css/img/show.jpg" >
+                <img src="${pageContext.request.contextPath}/static/css/img/other/show.jpg" >
             </div>
             <div class="collect col-xs-8 col-sm-8 col-md-8 col-lg-8"style="border: 2px solid #000000;">
                 <a href="javascript:void(0)">收藏</a>

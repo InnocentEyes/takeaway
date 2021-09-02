@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,9 +23,11 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Goods> findGoodsByTypeNo(String typeNo) {
-        List<Goods> goods = null;
+        List<Goods> goods = new ArrayList<>();
+        Integer amount = goodsDao.findGoodsCount(typeNo);
+        System.out.println(amount);
         if (goodsDao != null){
-            if (goodsDao.findGoodsCount(typeNo) > 0){
+            if (amount > 0){
                 goods = goodsDao.findGoodsByType(typeNo);
             }
         }
