@@ -12,16 +12,8 @@
     <meta charset="utf-8">
     <title>商品页面</title>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pageJs/jquery-3.6.0.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('#myButton').on('click', function () {
-                var $btn = $(this).button('loading');
-                // business logic...
-                $btn.button('reset');
-            })
-        })
-    </script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/goods.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/ajax/goods.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
@@ -48,7 +40,7 @@
                 <button type="submit" class="btn btn-default">查询</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">登录/注册</a></li>
+                <li><a id="login_register" href="${pageContext.request.contextPath}/index.jsp">登录/注册</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -82,13 +74,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="https://www.mobygames.com/images/covers/l/330413-uncharted-4-a-thief-s-end-playstation-4-front-cover.jpg" style="width: 100%; height: 500px;">
+                        <img src="${pageContext.request.contextPath}/static/css/img/banner/banner.jpg" style="width: 100%; height: 500px;">
                         <div class="carousel-caption">
                             限时精品
                         </div>
                     </div>
                     <div class="item">
-                        <img src="https://lumiere-a.akamaihd.net/v1/images/lego-star-wars-skywalker-saga-main_c0051eca.jpeg?region=0%2C0%2C1000%2C999&width=960" style="width: 100%; height: 500px;">
+                        <img src="${pageContext.request.contextPath}/static/css/img/banner/banner_2.jpg" style="width: 100%; height: 500px;">
                         <div class="carousel-caption">
                             限时精品
                         </div>
@@ -311,32 +303,32 @@
             <div class="col-11">
                 <div class="row ">
                     <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
-                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Pepper.</h3>
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">InnocentEyes</h3>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>菜单</b></h6>
                         <ul class="list-unstyled">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Blog</li>
-                            <li>Portfolio</li>
+                            <li>主页</li>
+                            <li>关于我们</li>
+                            <li>博客</li>
+                            <li>收藏夹</li>
                         </ul>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
-                        <p class="mb-1">605, RATAN ICON BUILDING</p>
-                        <p>SEAWOODS SECTOR</p>
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>地址</b></h6>
+                        <p class="mb-1">珠海科技学院</p>
+                        <p>广东省珠海市金湾区</p>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
                     <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
-                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Pepper All Rights Reserved.</small>
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> qzlzzz版权所有</small>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
-                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> anirudh@gmail.com</small>
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>qzlzzz</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> 1835905697@qq.com</small>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
-                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                        <h6 class="text-muted bold-text"><b>InnocentEyes</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> https://github.com/InnocentEyes</small>
                     </div>
                 </div>
             </div>

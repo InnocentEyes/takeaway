@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: qzlaaa
+  User: qzlzzz
   Date: 2021/8/12
   Time: 23:01
   To change this template use File | Settings | File Templates.
@@ -22,7 +22,7 @@
     <div id="top"></div>
     <div id="header">
         <div class="header_left_box">
-            <a id="login_register">登录/注册</a>
+            <a id="login_register" href="${pageContext.request.contextPath}/index.jsp">登录/注册</a>
         </div>
         <div class="header_right_box_one">
             <a href="javascript:void(0)">我的账户</a>
@@ -108,28 +108,31 @@
                     <div id="goods_id_one" class="img_1">
                         <img id="goods_img_one" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010001.png" >
                         <h3 id="goods_name_one">巫师三</h3>
-                        <span id="goods_price_one">127</span>元
-                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
+                        <span id="goods_price_one">127</span>元<br/>
+                        <br/>
+                        <button id="btn_one"> > </button>
                     </div>
                     <div id="goods_id_two" class="img_2">
                         <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010002.png" >
                         <h3 id="goods_name_two">刺客信条奥德赛</h3>
-                        <span id="goods_price_two">298</span>元
-                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
+                        <span id="goods_price_two">298</span>元<br/>
+                        <br/>
+                        <button id="btn_two"> > </button>
                     </div>
                 </div>
                 <div class="box_left">
                     <div id="goods_id_three" class="img_1 "><img id="goods_img_three" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010003.png" ><h3 id="goods_name_three">赛博朋克2077</h3>
-                        <span id="goods_price_three">298</span>元
-                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
+                        <span id="goods_price_three">298</span>元<br/>
+                        <button id="btn_three"> > </button>
                     </div>
                     <div id="goods_id_four" class="img_3"><img id="goods_img_four" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010004.png" ><h3 id="goods_name_four">古墓丽影</h3>
-                        <span id="goods_price_four">242</span>元
-                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
+                        <span id="goods_price_four">242</span>元<br/>
+                        <button id="btn_four"> > </button>
                     </div>
                     <div id="goods_id_five" class="img_2 "><img id="goods_img_five" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010005.png" ><h3 id="goods_name_five">刺客信条-英灵殿</h3>
-                        <span id="goods_price_five">198</span>元
-                        <img style="width: 20px; height: 20px; margin-top: 10px;" src="${pageContext.request.contextPath}/static/css/img/other/car.jpg" ><a href="javascript:void(0)">购买</a>
+                        <span id="goods_price_five">198</span>元<br/>
+                        <br/>
+                        <button id="btn_five" type="button"> > </button>
                     </div>
                 </div>
             </div>
