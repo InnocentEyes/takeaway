@@ -1,4 +1,6 @@
 $(function (){
+
+    var id = [];
     $.ajax({
         url:"/myWeb/loginAndRegister",
         dataType:"text",
@@ -9,8 +11,14 @@ $(function (){
         }
     })
 
+    function request(index){
+        var url="goods.jsp?goodsId="+id[index];
+        window.open(url);
+    }
+
 
     function goods_change(res){
+        id.splice(0,id.length);
         $(".img_1:first").attr("id",res[0].id);
         $("#goods_img_one").attr("src",res[0].img);
         $("#goods_name_one").text(res[0].name);
@@ -31,6 +39,7 @@ $(function (){
         $("#goods_img_five").attr("src",res[4].img);
         $("#goods_name_five").text(res[4].name);
         $("#goods_price_five").text(res[4].price);
+        id.push(res[0].id,res[1].id,res[2].id,res[3].id,res[4].id);
     }
 
     function ajax(val){
@@ -53,9 +62,34 @@ $(function (){
         ajax(val);
     })
 
+    $("#0201").click(function (){
+        var val = $(this).attr("id");
+        ajax(val)
+    })
+
     $("#0301").click(function (){
         var val = $(this).attr("id");
         ajax(val);
+    })
+
+    $("#btn_one").click(function (){
+        request(1);
+    })
+
+    $("#btn_two").click(function (){
+        request(2);
+    })
+
+    $("#btn_three").click(function (){
+        request(3);
+    })
+
+    $("#btn_four").click(function (){
+        request(4);
+    })
+
+    $("#btn_five").click(function (){
+        request(5);
     })
 
 

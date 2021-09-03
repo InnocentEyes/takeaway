@@ -110,29 +110,29 @@
                         <h3 id="goods_name_one">巫师三</h3>
                         <span id="goods_price_one">127</span>元<br/>
                         <br/>
-                        <button id="btn_one"> > </button>
+                        <button id="btn_one"> ->shop </button>
                     </div>
                     <div id="goods_id_two" class="img_2">
-                        <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010002.png" >
+                        <img id="goods_img_two" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010002.png" />
                         <h3 id="goods_name_two">刺客信条奥德赛</h3>
                         <span id="goods_price_two">298</span>元<br/>
                         <br/>
-                        <button id="btn_two"> > </button>
+                        <button id="btn_two"> ->shop </button>
                     </div>
                 </div>
                 <div class="box_left">
                     <div id="goods_id_three" class="img_1 "><img id="goods_img_three" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010003.png" ><h3 id="goods_name_three">赛博朋克2077</h3>
                         <span id="goods_price_three">298</span>元<br/>
-                        <button id="btn_three"> > </button>
+                        <button id="btn_three"> ->shop </button>
                     </div>
                     <div id="goods_id_four" class="img_3"><img id="goods_img_four" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010004.png" ><h3 id="goods_name_four">古墓丽影</h3>
                         <span id="goods_price_four">242</span>元<br/>
-                        <button id="btn_four"> > </button>
+                        <button id="btn_four"> ->shop </button>
                     </div>
                     <div id="goods_id_five" class="img_2 "><img id="goods_img_five" src="${pageContext.request.contextPath}/static/css/img/game_img/0201/02010005.png" ><h3 id="goods_name_five">刺客信条-英灵殿</h3>
                         <span id="goods_price_five">198</span>元<br/>
                         <br/>
-                        <button id="btn_five" type="button"> > </button>
+                        <button id="btn_five" type="button"> ->shop </button>
                     </div>
                 </div>
             </div>
