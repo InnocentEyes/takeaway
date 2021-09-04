@@ -23,4 +23,11 @@ public interface GoodsService {
      */
     List<Goods> findGoodsByGoodNo(String[] goodNo);
 
+    /**
+     * 根据商品的Id查询商品的信息
+     * @param goods_id 商品的id
+     * @return 符合条件的商品对象
+     */
+    Goods findGoodByGoodId(Integer goods_id);
+
 }

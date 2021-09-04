@@ -36,12 +36,21 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public List<Goods> findGoodsByGoodNo(String[] goodNo) {
-        List<Goods> goods = null;
+        List<Goods> goods = new ArrayList<>();
         if (goodsDao != null){
             for (String good_no : goodNo) {
                 goods.add(goodsDao.findGoodsByNo(good_no));
             }
         }
         return goods;
+    }
+
+    @Override
+    public Goods findGoodByGoodId(Integer goods_id) {
+        Goods good = new Goods();
+        if (goodsDao != null){
+            good = goodsDao.findGoodsById(goods_id);
+        }
+        return good;
     }
 }
