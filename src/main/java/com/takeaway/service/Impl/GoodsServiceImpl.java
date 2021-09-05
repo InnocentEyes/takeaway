@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -38,8 +40,10 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Goods> findGoodsByGoodNo(String[] goodNo) {
         List<Goods> goods = new ArrayList<>();
         if (goodsDao != null){
-            for (String good_no : goodNo) {
-                goods.add(goodsDao.findGoodsByNo(good_no));
+            Iterator<String> iterator = Arrays.stream(goodNo).iterator();
+            while (iterator.hasNext()){
+                String good = iterator.next();
+                goods.add(goodsDao.findGoodsByNo(good));
             }
         }
         return goods;

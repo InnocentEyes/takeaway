@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -104,10 +107,10 @@ public class OrderServiceImpl implements OrderService {
             flag = orderDao.addOrder(orders);
             if (flag = true){
                 flag = false;
-                for (String goods : goodNo) {
-                    if (goodsDao.findGoodsByNo(goods) != null) {
-                        flag = orderDetailDao.updateOrderNo(goods,orderNo);
-                    }
+                Iterator<String> iterator = Arrays.stream(goodNo).iterator();
+                while (iterator.hasNext()){
+                    String goods = iterator.next();
+                    flag = orderDetailDao.updateOrderNo(goods,orderNo);
                 }
             }
         }

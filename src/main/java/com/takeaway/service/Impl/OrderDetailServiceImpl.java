@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -85,8 +86,10 @@ public class OrderDetailServiceImpl implements OrderDetailService {
         List<OrderDetail> orderDetailList = null;
         if (orderDetailDao != null && memberMapper != null && orderDao != null){
             List<Orders> list = orderDao.findMemberOrder(member_id);
-            for (Orders orders : list) {
-                if (orders.getName() == order_no){
+            Iterator<Orders> iterator = list.iterator();
+            while (iterator.hasNext()){
+                Orders order = iterator.next();
+                if (order.getName() == order_no){
                     orderDetailList = orderDetailDao.findOrderDetailByOrderNo(order_no);
                     break;
                 }
